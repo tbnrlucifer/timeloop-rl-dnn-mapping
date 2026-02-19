@@ -38,7 +38,7 @@ sudo apt install build-essential scons libconfig++-dev libboost-all-dev
 Build:
 
 ```
-scons -j4
+scons -j2
 ```
 
 Binary will appear:
