@@ -107,3 +107,20 @@ See:
 RL_STATUS.md
 
 ---
+
+## Reference Output
+
+The `reference_output/` folder contains Timeloop evaluation results for the best mapping found.
+
+These files were generated using:
+
+timeloop-model arch.yaml prob.yaml best_map.yaml
+
+They include:
+
+• timeloop-model.stats.txt – energy, cycles, EDP
+• timeloop-model.map.txt – loop mapping
+• timeloop-model.map+stats.html – visualization
+• best_map.yaml – mapping evaluated
+
+These serve as validation reference.
