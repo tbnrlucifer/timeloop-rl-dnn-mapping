@@ -1,0 +1,68 @@
+problem:
+  instance:
+    C: 16
+    F: 120
+    K: 32
+    N: 1
+    P: 120
+    Q: 120
+    R: 3
+    S: 3
+    T: 3
+  shape:
+    coefficients:
+    - default: 1
+      name: Wstride
+    - default: 1
+      name: Hstride
+    - default: 1
+      name: Dstride
+    - default: 1
+      name: Wdilation
+    - default: 1
+      name: Hdilation
+    - default: 1
+      name: Ddilation
+    data-spaces:
+    - name: Weights
+      projection:
+      - - - C
+      - - - K
+      - - - R
+      - - - S
+      - - - T
+    - name: Inputs
+      projection:
+      - - - N
+      - - - C
+      - - - R
+          - Wdilation
+        - - P
+          - Wstride
+      - - - S
+          - Hdilation
+        - - Q
+          - Hstride
+      - - - T
+          - Ddilation
+        - - F
+          - Dstride
+    - name: Outputs
+      projection:
+      - - - N
+      - - - K
+      - - - Q
+      - - - P
+      - - - F
+      read-write: true
+    dimensions:
+    - R
+    - S
+    - T
+    - P
+    - Q
+    - F
+    - C
+    - K
+    - N
+    name: 3DCNN-Layer

@@ -1,0 +1,68 @@
+architecture:
+  version: 0.2
+  
+  subtree:
+  - name: System
+    
+    local:
+    - name: MainMemory
+      class: DRAM
+      attributes:
+        sizeKB: 5096000
+        word-bits: 8
+        read_bandwidth: 8
+        write_bandwidth: 8
+
+    subtree:
+    - name: Chip
+      attributes:
+        technology: 40nm
+
+      local:
+      - name: GlobalBuffer
+        class: SRAM
+        attributes:
+          sizeKB: 108
+          word-bits: 8
+          read_bandwidth: 16
+          write_bandwidth: 16
+
+      subtree:
+      - name: PE
+      
+        local:
+        - name: RegisterFile[0..255]
+          class: regfile
+          attributes:
+            depth: 672
+            width: 8
+            block-size: 1
+            word-bits: 8
+            read_bandwidth: 8
+            write_bandwidth: 8
+
+        - name: MACC[0..255]
+          class: intmac
+          attributes:
+            datawidth: 8
+
+mapspace:
+  constraints:
+  - target: MainMemory
+    type: datatype
+    keep:
+    - Outputs
+    - Weights
+    - Inputs
+  - target: GlobalBuffer
+    type: datatype
+    keep:
+    - Outputs
+    - Weights
+    - Inputs
+  - target: RegisterFile
+    type: datatype
+    keep:
+    - Outputs
+    - Weights
+    - Inputs

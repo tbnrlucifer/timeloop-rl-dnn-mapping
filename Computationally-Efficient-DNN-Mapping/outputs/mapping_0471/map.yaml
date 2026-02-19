@@ -1,0 +1,17 @@
+mapping:
+- factors: 'C=2 K=8 Q=6 F=2 P=30 '
+  permutation: CKQFP
+  target: MainMemory
+  type: temporal
+- factors: 'F=5 K=2 Q=2 '
+  permutation: FKQ
+  target: GlobalBuffer
+  type: temporal
+- factors: 'R=3 C=2 Q=2 F=4 P=4 '
+  permutation: RCQFP
+  target: GlobalBuffer
+  type: spatial
+- factors: 'C=4 T=3 K=2 F=3 S=3 Q=5 '
+  permutation: CTKFSQ
+  target: RegisterFile
+  type: temporal
