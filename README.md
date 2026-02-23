@@ -1,126 +1,102 @@
-# Timeloop RL-Based DNN Mapping Evaluation
+# Timeloop GAMMA Integration
 
-This repository contains the setup, modifications, and documentation for reproducing the RL-based DNN mapping evaluation workflow described in:
+This branch contains the complete setup and integration of the GAMMA mapping generator with Timeloop and pytimeloop.
 
-**Computationally Efficient DNN Mapping using Reinforcement Learning**
-
-This includes:
-
-* Timeloop setup
-* RL candidate mapping generation
-* Timeloop-based reevaluation
-* Debugged Python reevaluation pipeline
-* Fixes for modern Timeloop versions
+GAMMA is used as the mapping generator, and Timeloop is used as the evaluation engine.
 
 ---
 
 # Overview
 
-The workflow consists of two stages:
-
-### Stage 1: RL Mapping Generation
-
-The RL script generates candidate mappings and stores them in a pickle file.
+The mapping evaluation pipeline:
 
 ```
-modified_script.py → output_mappings.pkl
+GAMMA → pytimeloop → Timeloop → stats → reward metrics
 ```
 
----
+GAMMA generates mappings and Timeloop evaluates them to produce:
 
-### Stage 2: Timeloop Reevaluation
+• latency (cycles)
+• energy
+• energy-delay product (EDP)
+• memory accesses
+• utilization
 
-Each candidate mapping is evaluated using Timeloop to obtain:
-
-* Energy
-* Cycles
-* EDP
-
-```
-model_for_RL_reevaluation.py → best_map.yaml
-```
+These metrics can be used for optimization and analysis.
 
 ---
 
-# Key Contributions / Fixes
+# What This Branch Contains
 
-This repo fixes several compatibility issues:
+This branch includes:
 
-• Python bindings removed in newer Timeloop versions
-• Replaced Python API calls with CLI subprocess execution
-• Fixed LD_LIBRARY_PATH linking issues
-• Fixed mapping YAML formatting issues
-• Implemented full reevaluation pipeline
-• Verified consistency between CLI and Python execution
-
----
-
-# Current Status
-
-Working:
-
-* Timeloop setup
-* Mapping reevaluation
-* Best mapping extraction
-* Full stats generation
-
-Partial / In Progress:
-
-* PPO training implementation
-* RL convergence validation
-
-See RL_STATUS.md for details.
-
----
-
-# Repository Purpose
-
-This repository documents:
-
-* Complete reproducible setup
-* Debugging steps
-* Fixed reevaluation implementation
-* RL pipeline status
-
----
-
-# Full setup instructions
+• Fully working GAMMA setup
+• pytimeloop build and integration
+• Timeloop compilation and fixes
+• Environment configuration
+• Complete setup guide
 
 See:
 
-SETUP.md
+```
+GAMMA_SETUP.md
+```
+
+for full installation instructions.
 
 ---
 
-# Reevaluation details
+# Environment Requirements
 
-See:
+Recommended configuration:
 
-REEVALUATION.md
-
----
-
-# RL implementation status
-
-See:
-
-RL_STATUS.md
+```
+OS: Ubuntu 20.04 (native or WSL)
+Python: 3.8
+Conda: Miniconda or Anaconda
+CMake: 3.10 – 3.24
+GCC: 9 – 11
+```
 
 ---
 
-## Reference Output
+# Setup
 
-The `reference_output/` folder contains Timeloop evaluation results for the best mapping found.
+Follow the complete guide:
 
-These files were generated using:
+```
+GAMMA_SETUP.md
+```
 
-timeloop-model arch.yaml prob.yaml best_map.yaml
+This includes:
 
-They include:
+• Conda environment creation
+• pytimeloop installation
+• Timeloop build
+• Required fixes
+• Verification steps
 
-• timeloop-model.stats.txt – energy, cycles, EDP
-• timeloop-model.map.txt – loop mapping
-• timeloop-model.map+stats.html – visualization
-• best_map.yaml – mapping evaluated
+---
 
-These serve as validation reference.
+# Verification
+
+Test pytimeloop import:
+
+```
+python -c "import pytimeloop"
+```
+
+If no error appears, setup is successful.
+
+---
+
+# Relationship with main branch
+
+Repository structure:
+
+• main branch → RL-based mapping generator
+• gamma branch → GAMMA-based mapping generator
+
+Both use Timeloop as the evaluation engine.
+
+---
