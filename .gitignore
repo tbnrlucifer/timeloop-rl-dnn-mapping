@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# Python environments
+.venv/
+venv/
+env/
+
+# Generated mapping data
+*.pkl
+
+# Runtime logs
+*.log
+
+# Timeloop generated outputs
+timeloop-model.stats.txt
+timeloop-model.map.txt
+timeloop-model.map+stats.xml
+timeloop-model.map+stats.html
+
+# Generated / temporary mappings
+best_map.yaml
+best_rl_map.yaml
+
+# Backup / temporary files
+*.bak
+*.tmp
+*.swp
+*~
+
+# Windows metadata
+*:Zone.Identifier
+
+# OS metadata
+.DS_Store
+Thumbs.db

@@ -1,126 +1,58 @@
-# Timeloop RL-Based DNN Mapping Evaluation
+# Timeloop RL-GA DNN Mapping
 
-This repository contains the setup, modifications, and documentation for reproducing the RL-based DNN mapping evaluation workflow described in:
+This branch extends the reinforcement-learning-based DNN mapping
+workflow with a custom Genetic Algorithm (GA) feedback loop and
+Timeloop-based evaluation.
 
-**Computationally Efficient DNN Mapping using Reinforcement Learning**
+The project is based on the approach described in:
 
-This includes:
+**Computationally Efficient DNN Mapping Search Heuristic using Deep
+Reinforcement Learning**
 
-* Timeloop setup
-* RL candidate mapping generation
-* Timeloop-based reevaluation
-* Debugged Python reevaluation pipeline
-* Fixes for modern Timeloop versions
+The current research direction combines:
 
----
-
-# Overview
-
-The workflow consists of two stages:
-
-### Stage 1: RL Mapping Generation
-
-The RL script generates candidate mappings and stores them in a pickle file.
-
-```
-modified_script.py → output_mappings.pkl
-```
+- Reinforcement Learning (RL) for generating DNN mappings
+- A custom Genetic Algorithm for evolutionary refinement
+- Timeloop for hardware-aware mapping evaluation
+- PPO-based feedback from GA solutions to the RL mapper
 
 ---
 
-### Stage 2: Timeloop Reevaluation
+## Research Workflow
 
-Each candidate mapping is evaluated using Timeloop to obtain:
+The current hybrid workflow is:
 
-* Energy
-* Cycles
-* EDP
-
-```
-model_for_RL_reevaluation.py → best_map.yaml
-```
-
----
-
-# Key Contributions / Fixes
-
-This repo fixes several compatibility issues:
-
-• Python bindings removed in newer Timeloop versions
-• Replaced Python API calls with CLI subprocess execution
-• Fixed LD_LIBRARY_PATH linking issues
-• Fixed mapping YAML formatting issues
-• Implemented full reevaluation pipeline
-• Verified consistency between CLI and Python execution
-
----
-
-# Current Status
-
-Working:
-
-* Timeloop setup
-* Mapping reevaluation
-* Best mapping extraction
-* Full stats generation
-
-Partial / In Progress:
-
-* PPO training implementation
-* RL convergence validation
-
-See RL_STATUS.md for details.
-
----
-
-# Repository Purpose
-
-This repository documents:
-
-* Complete reproducible setup
-* Debugging steps
-* Fixed reevaluation implementation
-* RL pipeline status
-
----
-
-# Full setup instructions
-
-See:
-
-SETUP.md
-
----
-
-# Reevaluation details
-
-See:
-
-REEVALUATION.md
-
----
-
-# RL implementation status
-
-See:
-
-RL_STATUS.md
-
----
-
-## Reference Output
-
-The `reference_output/` folder contains Timeloop evaluation results for the best mapping found.
-
-These files were generated using:
-
-timeloop-model arch.yaml prob.yaml best_map.yaml
-
-They include:
-
-• timeloop-model.stats.txt – energy, cycles, EDP
-• timeloop-model.map.txt – loop mapping
-• timeloop-model.map+stats.html – visualization
-• best_map.yaml – mapping evaluated
-
-These serve as validation reference.
+```text
+                 ┌─────────────────────┐
+                 │   RL Mapping Search │
+                 └──────────┬──────────┘
+                            │
+                     RL candidate
+                       mappings
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │    Custom GA        │
+                 │  mapping refinement │
+                 └──────────┬──────────┘
+                            │
+                       elite mappings
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │  Timeloop Evaluator │
+                 │     Energy × Cycles │
+                 └──────────┬──────────┘
+                            │
+                         EDP/reward
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │   PPO Feedback      │
+                 │   to RL network     │
+                 └──────────┬──────────┘
+                            │
+                            ▼
+                    Subsequent RL search
+                            │
+                            └──────► repeat
