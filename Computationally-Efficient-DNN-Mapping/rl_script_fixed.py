@@ -27,6 +27,14 @@ import pickle
 from collections import defaultdict
 
 
+# ── Device ───────────────────────────────────────────────────────────────────
+
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"RL device: {DEVICE}")
+if DEVICE.type == "cuda":
+    print(f"GPU: {torch.cuda.get_device_name(0)}")
+
+
 # ── Utility ───────────────────────────────────────────────────────────────────
 
 def prime_factors(n):
@@ -194,14 +202,22 @@ class ActorCriticNetwork(nn.Module):
         return probs, value
 
     def sample_action(self, state):
-        """Section 6.3: STOCHASTIC sampling from softmax — essential for exploration."""
+        """Stochastic policy sampling, kept on DEVICE."""
+        if not torch.is_tensor(state):
+            state = torch.tensor(state, dtype=torch.float32, device=DEVICE)
+        else:
+            state = state.to(DEVICE)
+
         probs, value = self.forward(state)
-        probs_np = probs.squeeze(0).detach().numpy()
-        actions, act_probs = [], []
-        for group in probs_np:
-            idx = np.random.choice(3, p=group)   # sample, not argmax
-            actions.append(idx - 1)
-            act_probs.append(float(group[idx]))
+        probs = probs.squeeze(0)  # [nlpf, 3]
+
+        # Sample independently for each LPF position.
+        dist = torch.distributions.Categorical(probs=probs)
+        idx = dist.sample()
+
+        actions = (idx - 1).detach().cpu().tolist()
+        act_probs = probs.gather(1, idx.unsqueeze(1)).squeeze(1).detach().cpu().tolist()
+
         return actions, act_probs, value
 
 
@@ -267,78 +283,195 @@ def collect_trajectories(acnet, init_tensor, init_tuples,
 # ── PPO update (Table 6) ──────────────────────────────────────────────────────
 
 def compute_advantages(states, rewards, acnet, gamma=0.95, lambda_=0.99):
-    acnet.eval()
-    advs = []
-    adv  = 0.0
-    with torch.no_grad():
-        for t in reversed(range(len(states))):
-            s   = torch.tensor(states[t], dtype=torch.float32)
-            _, vt = acnet(s)
-            vt  = vt.item()
-            vn  = 0.0 if t == len(states)-1 else \
-                  acnet(torch.tensor(states[t+1], dtype=torch.float32))[1].item()
-            delta = rewards[t] + gamma*vn - vt
-            adv   = delta + gamma*lambda_*adv
-            advs.insert(0, adv)
-    acnet.train()
-    return advs
+    """
+    Batched Generalized Advantage Estimation (GAE).
 
+    Returns:
+        advantages: numpy array
+        returns:    numpy array for critic training
+    """
+    acnet.eval()
+
+    states_t = torch.as_tensor(
+        np.asarray(states, dtype=np.float32),
+        dtype=torch.float32,
+        device=DEVICE
+    )
+
+    rewards_t = torch.as_tensor(
+        np.asarray(rewards, dtype=np.float32),
+        dtype=torch.float32,
+        device=DEVICE
+    )
+
+    with torch.no_grad():
+        _, values = acnet(states_t)
+        values = values.squeeze(-1)
+
+    # V(s_{t+1}), with terminal value = 0.
+    next_values = torch.zeros_like(values)
+    next_values[:-1] = values[1:]
+
+    deltas = rewards_t + gamma * next_values - values
+
+    advantages = torch.zeros_like(rewards_t)
+    gae = torch.zeros((), dtype=torch.float32, device=DEVICE)
+
+    for t in reversed(range(len(rewards_t))):
+        gae = deltas[t] + gamma * lambda_ * gae
+        advantages[t] = gae
+
+    returns = advantages + values
+
+    acnet.train()
+
+    return (
+        advantages.detach().cpu().numpy(),
+        returns.detach().cpu().numpy()
+    )
+
+
+# ── PPO update ────────────────────────────────────────────────────────────────
 
 def ppo_update(traj, acnet, optimizer,
                gamma=0.95, lambda_=0.99, epsilon=0.2,
-               c1=0.5, c2=0.01, learning_traj=512, batch_size=256, n_epochs=3):
-    states    = traj['states']
-    actions   = traj['actions']
-    act_probs = traj['act_probs']
-    rewards   = traj['rewards']
-    n         = len(states)
+               c1=0.5, c2=0.01, learning_traj=512,
+               batch_size=256, n_epochs=3):
 
+    states = np.asarray(traj['states'], dtype=np.float32)
+    actions = np.asarray(traj['actions'], dtype=np.int64)
+    old_probs = np.asarray(traj['act_probs'], dtype=np.float32)
+    rewards = np.asarray(traj['rewards'], dtype=np.float32)
+
+    n = len(states)
+
+    if n == 0:
+        return
+
+    # Compute GAE once over the trajectory.
+    advantages, returns = compute_advantages(
+        states, rewards, acnet, gamma, lambda_
+    )
+
+    # Normalize advantages globally for this trajectory.
+    advantages = (
+        (advantages - advantages.mean()) /
+        (advantages.std() + 1e-8)
+    )
+
+    # Process the trajectory in learning chunks, matching the
+    # paper's NlearningTraj=512.
     for cs in range(0, n, learning_traj):
-        ce = min(cs+learning_traj, n)
-        s_states = states[cs:ce]
-        s_actions = actions[cs:ce]
-        s_probs  = act_probs[cs:ce]
-        s_rews   = rewards[cs:ce]
+        ce = min(cs + learning_traj, n)
 
-        advs     = compute_advantages(s_states, s_rews, acnet, gamma, lambda_)
-        adv_t    = torch.tensor(advs, dtype=torch.float32)
-        adv_norm = ((adv_t - adv_t.mean()) / (adv_t.std()+1e-8)).tolist()
+        s_states = torch.as_tensor(
+            states[cs:ce],
+            dtype=torch.float32,
+            device=DEVICE
+        )
 
-        for bs in range(0, len(s_states), batch_size):
-            be = min(bs+batch_size, len(s_states))
-            for _ in range(n_epochs):
-                for i in range(bs, be):
-                    state     = torch.tensor(s_states[i], dtype=torch.float32)
-                    action    = torch.tensor(s_actions[i], dtype=torch.long)
-                    old_prob  = torch.tensor(s_probs[i],  dtype=torch.float32)
-                    advantage = torch.tensor(adv_norm[i], dtype=torch.float32)
+        s_actions = torch.as_tensor(
+            actions[cs:ce],
+            dtype=torch.long,
+            device=DEVICE
+        )
 
-                    probs, value = acnet(state)
-                    probs  = probs.squeeze(0)        # [nlpf, 3]
-                    value  = value.squeeze()
+        s_old_probs = torch.as_tensor(
+            old_probs[cs:ce],
+            dtype=torch.float32,
+            device=DEVICE
+        )
 
-                    action_idx = action + 1
-                    curr_prob = probs[torch.arange(probs.shape[0]), action_idx]
-                    ratio     = torch.exp(torch.sum(torch.log(curr_prob+1e-8)) -
-                                          torch.sum(torch.log(old_prob+1e-8)))
-                    s1 = ratio * advantage
-                    s2 = torch.clamp(ratio, 1-epsilon, 1+epsilon) * advantage
-                    loss_actor = -torch.min(s1, s2).mean()
+        s_advs = torch.as_tensor(
+            advantages[cs:ce],
+            dtype=torch.float32,
+            device=DEVICE
+        )
 
-                    vn = torch.tensor(0.0)
-                    if i < len(s_states)-1:
-                        with torch.no_grad():
-                            _, vn = acnet(torch.tensor(s_states[i+1], dtype=torch.float32))
-                        vn = vn.squeeze().detach()
-                    target     = torch.tensor(float(s_rews[i]) + gamma*float(vn),
-                                              dtype=torch.float32)
-                    loss_critic = F.mse_loss(value, target)
-                    entropy     = -(probs * torch.log(probs+1e-8)).sum(dim=-1).mean()
+        s_returns = torch.as_tensor(
+            returns[cs:ce],
+            dtype=torch.float32,
+            device=DEVICE
+        )
 
-                    loss = loss_actor + c1*loss_critic - c2*entropy
-                    optimizer.zero_grad()
-                    loss.backward()
-                    optimizer.step()
+        chunk_n = len(s_states)
+
+        for _ in range(n_epochs):
+
+            # Shuffle minibatch order.
+            permutation = torch.randperm(
+                chunk_n,
+                device=DEVICE
+            )
+
+            for bs in range(0, chunk_n, batch_size):
+                be = min(bs + batch_size, chunk_n)
+                idx = permutation[bs:be]
+
+                batch_states = s_states[idx]
+                batch_actions = s_actions[idx]
+                batch_old_probs = s_old_probs[idx]
+                batch_advs = s_advs[idx]
+                batch_returns = s_returns[idx]
+
+                probs, values = acnet(batch_states)
+
+                # probs: [batch, nlpf, 3]
+                # Stored actions are -1/0/+1.
+                action_idx = batch_actions + 1
+
+                chosen_probs = torch.gather(
+                    probs,
+                    dim=2,
+                    index=action_idx.unsqueeze(-1)
+                ).squeeze(-1)
+
+                # Joint probability of the complete action vector.
+                old_log_prob = torch.log(
+                    batch_old_probs + 1e-8
+                ).sum(dim=1)
+
+                current_log_prob = torch.log(
+                    chosen_probs + 1e-8
+                ).sum(dim=1)
+
+                ratio = torch.exp(
+                    current_log_prob - old_log_prob
+                )
+
+                unclipped = ratio * batch_advs
+
+                clipped = torch.clamp(
+                    ratio,
+                    1.0 - epsilon,
+                    1.0 + epsilon
+                ) * batch_advs
+
+                loss_actor = -torch.min(
+                    unclipped,
+                    clipped
+                ).mean()
+
+                values = values.squeeze(-1)
+
+                loss_critic = F.mse_loss(
+                    values,
+                    batch_returns
+                )
+
+                entropy = -(
+                    probs * torch.log(probs + 1e-8)
+                ).sum(dim=-1).mean()
+
+                loss = (
+                    loss_actor
+                    + c1 * loss_critic
+                    - c2 * entropy
+                )
+
+                optimizer.zero_grad(set_to_none=True)
+                loss.backward()
+                optimizer.step()
 
 
 def train_network(initial_input_list, acnet=None, optimizer=None, episodes=30):
@@ -363,7 +496,7 @@ def train_network(initial_input_list, acnet=None, optimizer=None, episodes=30):
     if acnet is None:
         sample_tuples = build_init_tuples(initial_input_list, loop_orderings[0][0], False)
         mapped = assign_increasing_values(sample_tuples)
-        acnet = ActorCriticNetwork(len(mapped), 3*len(mapped))
+        acnet = ActorCriticNetwork(len(mapped), 3*len(mapped)).to(DEVICE)
         optimizer = optim.Adam(acnet.parameters(), lr=1e-3)
 
     all_mappings = []
