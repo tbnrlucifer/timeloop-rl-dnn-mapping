@@ -329,7 +329,7 @@ def run_timeloop(arch_yaml, prob_yaml, map_yaml):
 
         cmd = [TIMELLOOP_BIN, arch_file, prob_file, map_file]
 
-        # 🔥 Inject LD_LIBRARY_PATH explicitly
+        # Inject LD_LIBRARY_PATH explicitly
         env = os.environ.copy()
         env["LD_LIBRARY_PATH"] = TIMELLOOP_LIB + ":" + env.get("LD_LIBRARY_PATH", "")
 
@@ -344,6 +344,7 @@ def run_timeloop(arch_yaml, prob_yaml, map_yaml):
 
         if result.returncode != 0:
             print("Timeloop failed:")
+            print(result.stderr)
             return None
 
         stats_file = os.path.join(tmpdir, "timeloop-model.stats.txt")
@@ -435,7 +436,8 @@ if __name__ == "__main__":
 
     arch_file = "arch/arch.yaml"
     prob_file = f"prob/prob_3d_{nn_layer_number}.yaml"
-    mapping_file = f"map/layer_{nn_layer_number}_wtThres_375_otThres_216_initGuessOrder_0_sorted_0_map.pickle"
+    # mapping_file = f"map/layer_{nn_layer_number}_wtThres_375_otThres_216_initGuessOrder_0_sorted_0_map.pickle"
+    mapping_file = "output_mappings.pkl"
 
     # Load architecture
     with open(arch_file) as f:
@@ -461,5 +463,9 @@ if __name__ == "__main__":
     print("Time:", end - start, "seconds")
     print("Best EDP:", best_edp)
 
-    with open("best_map.yaml", "w") as f:
-        f.write(best_map_yaml)
+    if best_map_yaml is not None:
+        with open("best_map.yaml", "w") as f:
+            f.write(best_map_yaml)
+    else:
+        print("No valid mapping found.")
+
