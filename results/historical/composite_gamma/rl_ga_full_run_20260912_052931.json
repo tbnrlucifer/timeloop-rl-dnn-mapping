@@ -1,0 +1,3879 @@
+{
+  "experiment": {
+    "name": "RL-GAMMA-RL 3-iteration hybrid run",
+    "timestamp": "20260912_052931",
+    "dimension": [
+      1,
+      32,
+      16,
+      120,
+      120,
+      120,
+      3,
+      3,
+      3
+    ],
+    "initial_input_list": [
+      3,
+      3,
+      3,
+      120,
+      120,
+      120,
+      16,
+      32
+    ],
+    "gamma": {
+      "population": 20,
+      "generations": 5,
+      "parents_ratio": 0.5,
+      "elite_count": 5,
+      "inject_ratio": 0.1
+    },
+    "ppo": {
+      "feedback_steps_per_elite": 4,
+      "continued_training_episodes": 4
+    }
+  },
+  "timing_seconds": {
+    "initial_rl": 220.3516845189988,
+    "total": 1138.8636780569996
+  },
+  "initial_rl": {
+    "mapping_count": 5930,
+    "best_rl_reward": 25.0,
+    "best_rl_tuples": [
+      [
+        7,
+        2
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        8,
+        2
+      ]
+    ],
+    "mean_rl_reward": 3.53464708865946,
+    "top_rl_rewards": [
+      25.0,
+      25.0,
+      25.0,
+      16.508275989791155,
+      16.508275989791155,
+      16.508275989791155,
+      16.508275989791155,
+      11.230615944472225,
+      11.230615944472225,
+      11.230615944472225,
+      11.230615944472225,
+      11.230615944472225,
+      11.230615944472225,
+      11.230615944472225,
+      11.230615944472225,
+      11.230615944472225,
+      11.230615944472225,
+      11.230615944472225,
+      11.230615944472225,
+      11.230615944472225
+    ]
+  },
+  "iterations": [
+    {
+      "iteration": 1,
+      "population": {
+        "size": 20,
+        "previous_gamma_elites": 0,
+        "new_rl_candidates": 20,
+        "selected_rl_best_reward": 25.0,
+        "selected_rl_best_tuples": [
+          [
+            7,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ]
+        ],
+        "selected_rl_mean_reward": 14.351555561865178
+      },
+      "gamma": {
+        "elite_count": 5,
+        "elites": [
+          {
+            "native_gamma_rank": 1,
+            "native_gamma_edp": 8417428096508.159,
+            "projected_timeloop_edp": 7299057373057.175,
+            "projected_timeloop_energy_pJ": 73333186377.32663,
+            "projected_timeloop_cycles": 99532800.0,
+            "projected_timeloop_utilization": 0.9375,
+            "projected_tuples": [
+              [
+                5,
+                5
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=4 C=4 F=3 P=1 Q=5 R=1 S=1 T=1",
+                  "permutation": "QFCKRSTPN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=4 C=2 F=2 P=6 Q=6 R=1 S=1 T=3",
+                  "permutation": "QFPCKTRSN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=1 C=2 F=1 P=1 Q=2 R=3 S=3 T=1",
+                  "permutation": "SRQCTPFKN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=1 F=20 P=20 Q=2 R=1 S=1 T=1",
+                  "permutation": "QFPKRSTCN"
+                }
+              ]
+            }
+          },
+          {
+            "native_gamma_rank": 2,
+            "native_gamma_edp": 9296269001761.299,
+            "projected_timeloop_edp": 8759115702777.147,
+            "projected_timeloop_energy_pJ": 73335253159.23618,
+            "projected_timeloop_cycles": 119439360.0,
+            "projected_timeloop_utilization": 0.78125,
+            "projected_tuples": [
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                8,
+                2
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=1 C=4 F=5 P=1 Q=10 R=1 S=1 T=1",
+                  "permutation": "QFCRSTPKN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=16 C=4 F=2 P=6 Q=1 R=1 S=1 T=3",
+                  "permutation": "FPCKTRSQN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=1 C=1 F=2 P=1 Q=2 R=3 S=3 T=1",
+                  "permutation": "SRQFTPCKN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=1 F=6 P=20 Q=6 R=1 S=1 T=1",
+                  "permutation": "QFPKRSTCN"
+                }
+              ]
+            }
+          },
+          {
+            "native_gamma_rank": 3,
+            "native_gamma_edp": 9376171188615.803,
+            "projected_timeloop_edp": 8281381216952.657,
+            "projected_timeloop_energy_pJ": 83202534410.29146,
+            "projected_timeloop_cycles": 99532800.0,
+            "projected_timeloop_utilization": 0.9375,
+            "projected_tuples": [
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=1 C=2 F=2 P=10 Q=6 R=1 S=1 T=1",
+                  "permutation": "QFPCRSTKN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=16 C=4 F=3 P=1 Q=5 R=3 S=1 T=1",
+                  "permutation": "QFCKRSTPN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=1 C=1 F=2 P=1 Q=1 R=1 S=3 T=3",
+                  "permutation": "STFRPQCKN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=2 F=10 P=12 Q=4 R=1 S=1 T=1",
+                  "permutation": "QFPCKRSTN"
+                }
+              ]
+            }
+          },
+          {
+            "native_gamma_rank": 4,
+            "native_gamma_edp": 9404058673946.93,
+            "projected_timeloop_edp": 7293716672284.733,
+            "projected_timeloop_energy_pJ": 73279528680.84424,
+            "projected_timeloop_cycles": 99532800.0,
+            "projected_timeloop_utilization": 0.9375,
+            "projected_tuples": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=1 C=4 F=5 P=6 Q=2 R=1 S=1 T=1",
+                  "permutation": "PQCFRSTKN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=8 C=2 F=2 P=1 Q=4 R=3 S=3 T=3",
+                  "permutation": "QCTRSFKPN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=2 F=1 P=4 Q=1 R=1 S=1 T=1",
+                  "permutation": "PCKRSTQFN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=1 F=12 P=5 Q=15 R=1 S=1 T=1",
+                  "permutation": "PQFKRSTCN"
+                }
+              ]
+            }
+          },
+          {
+            "native_gamma_rank": 5,
+            "native_gamma_edp": 10798524224267.22,
+            "projected_timeloop_edp": 10798524224267.22,
+            "projected_timeloop_energy_pJ": 72328078276.82413,
+            "projected_timeloop_cycles": 149299200.0,
+            "projected_timeloop_utilization": 0.625,
+            "projected_tuples": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                8,
+                2
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=1 C=8 F=1 P=10 Q=2 R=1 S=1 T=1",
+                  "permutation": "PQCRSTFKN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=4 C=2 F=5 P=1 Q=6 R=3 S=3 T=3",
+                  "permutation": "QCTRSFKPN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=4 C=1 F=2 P=2 Q=1 R=1 S=1 T=1",
+                  "permutation": "FKPRSTQCN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=1 F=12 P=6 Q=10 R=1 S=1 T=1",
+                  "permutation": "PQFKRSTCN"
+                }
+              ]
+            }
+          }
+        ],
+        "best_native_gamma_edp": 8417428096508.159,
+        "best_native_gamma_rank": 1,
+        "best_native_gamma_tuples": [
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            2
+          ]
+        ],
+        "best_projected_timeloop_edp": 7293716672284.733,
+        "best_projected_native_gamma_rank": 4
+      },
+      "feedback": {
+        "elite_count": 5,
+        "steps_per_elite": 4,
+        "feedback_steps": 20
+      },
+      "continued_rl": {
+        "mapping_count": 1489,
+        "best_rl_reward": 11.230615944472225,
+        "best_rl_tuples": [
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ]
+        ],
+        "mean_rl_reward": 3.5918368431027123,
+        "top_rl_rewards": [
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463
+        ]
+      },
+      "timing_seconds": {
+        "gamma": 156.55974837199938,
+        "feedback": 82.00449128000037,
+        "continued_rl": 45.486325071000465,
+        "iteration_total": 306.05527481800164
+      }
+    },
+    {
+      "iteration": 2,
+      "population": {
+        "size": 20,
+        "previous_gamma_elites": 5,
+        "new_rl_candidates": 15,
+        "selected_rl_best_reward": 11.230615944472225,
+        "selected_rl_best_tuples": [
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ]
+        ],
+        "selected_rl_mean_reward": 10.436707479814947
+      },
+      "gamma": {
+        "elite_count": 5,
+        "elites": [
+          {
+            "native_gamma_rank": 1,
+            "native_gamma_edp": 8427747268219.97,
+            "projected_timeloop_edp": 8393507899231.699,
+            "projected_timeloop_energy_pJ": 84329064381.10553,
+            "projected_timeloop_cycles": 99532800.0,
+            "projected_timeloop_utilization": 0.9375,
+            "projected_tuples": [
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=4 C=4 F=3 P=5 Q=1 R=1 S=1 T=1",
+                  "permutation": "CKPFRSTQN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=4 C=2 F=1 P=4 Q=20 R=3 S=3 T=1",
+                  "permutation": "QSCRPKTFN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=1 C=1 F=1 P=1 Q=2 R=1 S=1 T=3",
+                  "permutation": "TQRSPFCKN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=2 F=40 P=6 Q=3 R=1 S=1 T=1",
+                  "permutation": "QKCFPRSTN"
+                }
+              ]
+            }
+          },
+          {
+            "native_gamma_rank": 2,
+            "native_gamma_edp": 10526405456338.82,
+            "projected_timeloop_edp": 8285503229975.218,
+            "projected_timeloop_energy_pJ": 66595158419.939705,
+            "projected_timeloop_cycles": 124416000.0,
+            "projected_timeloop_utilization": 0.75,
+            "projected_tuples": [
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=4 C=4 F=1 P=1 Q=12 R=1 S=1 T=1",
+                  "permutation": "CKQRSTPFN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=4 C=2 F=6 P=5 Q=2 R=3 S=3 T=1",
+                  "permutation": "QSFCRPKTN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=2 F=2 P=1 Q=1 R=1 S=1 T=3",
+                  "permutation": "TKCFRSPQN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=1 C=1 F=10 P=24 Q=5 R=1 S=1 T=1",
+                  "permutation": "QFPRSTCKN"
+                }
+              ]
+            }
+          },
+          {
+            "native_gamma_rank": 3,
+            "native_gamma_edp": 12089091885813.863,
+            "projected_timeloop_edp": 10640619676848.396,
+            "projected_timeloop_energy_pJ": 85524528009.64825,
+            "projected_timeloop_cycles": 124416000.0,
+            "projected_timeloop_utilization": 0.75,
+            "projected_tuples": [
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=2 C=4 F=24 P=1 Q=1 R=1 S=1 T=1",
+                  "permutation": "FCKRSTPQN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=4 C=2 F=1 P=5 Q=6 R=3 S=3 T=3",
+                  "permutation": "CPQRSKTFN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=1 C=1 F=5 P=1 Q=1 R=1 S=1 T=1",
+                  "permutation": "FRSTPQCKN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=4 C=2 F=1 P=24 Q=20 R=1 S=1 T=1",
+                  "permutation": "CPQKRSTFN"
+                }
+              ]
+            }
+          },
+          {
+            "native_gamma_rank": 4,
+            "native_gamma_edp": 12498343888734.912,
+            "projected_timeloop_edp": 11770743379291.482,
+            "projected_timeloop_energy_pJ": 78839962834.97488,
+            "projected_timeloop_cycles": 149299200.0,
+            "projected_timeloop_utilization": 0.625,
+            "projected_tuples": [
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=4 C=4 F=1 P=10 Q=1 R=1 S=1 T=1",
+                  "permutation": "CKPRSTQFN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=4 C=2 F=5 P=1 Q=10 R=1 S=3 T=3",
+                  "permutation": "QSFCTKRPN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=1 F=1 P=1 Q=4 R=3 S=1 T=1",
+                  "permutation": "RQKSTPFCN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=1 C=2 F=24 P=12 Q=3 R=1 S=1 T=1",
+                  "permutation": "QCFPRSTKN"
+                }
+              ]
+            }
+          },
+          {
+            "native_gamma_rank": 5,
+            "native_gamma_edp": 13195552368848.875,
+            "projected_timeloop_edp": 11148749679410.787,
+            "projected_timeloop_energy_pJ": 74673874203.01508,
+            "projected_timeloop_cycles": 149299200.0,
+            "projected_timeloop_utilization": 0.625,
+            "projected_tuples": [
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                4,
+                5
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=2 C=4 F=10 P=1 Q=2 R=1 S=1 T=1",
+                  "permutation": "CKQFRSTPN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=8 C=4 F=1 P=1 Q=12 R=1 S=3 T=3",
+                  "permutation": "QSCTKRPFN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=1 C=1 F=1 P=1 Q=5 R=3 S=1 T=1",
+                  "permutation": "RQSTPFCKN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=1 F=12 P=120 Q=1 R=1 S=1 T=1",
+                  "permutation": "KFPRSTQCN"
+                }
+              ]
+            }
+          }
+        ],
+        "best_native_gamma_edp": 8427747268219.97,
+        "best_native_gamma_rank": 1,
+        "best_native_gamma_tuples": [
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "best_projected_timeloop_edp": 8285503229975.218,
+        "best_projected_native_gamma_rank": 2
+      },
+      "feedback": {
+        "elite_count": 5,
+        "steps_per_elite": 4,
+        "feedback_steps": 20
+      },
+      "continued_rl": {
+        "mapping_count": 1251,
+        "best_rl_reward": 16.508275989791155,
+        "best_rl_tuples": [
+          [
+            7,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            6,
+            2
+          ]
+        ],
+        "mean_rl_reward": 3.5459333441038523,
+        "top_rl_rewards": [
+          16.508275989791155,
+          15.312310770437263,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.127187674475822,
+          7.4829923112875445,
+          7.4829923112875445,
+          7.4829923112875445,
+          7.4829923112875445,
+          7.4829923112875445,
+          7.4829923112875445,
+          7.4829923112875445,
+          7.4829923112875445,
+          7.4829923112875445,
+          7.4829923112875445,
+          7.4829923112875445,
+          7.4829923112875445,
+          7.4829923112875445
+        ]
+      },
+      "timing_seconds": {
+        "gamma": 159.5640374579998,
+        "feedback": 41.45239703200059,
+        "continued_rl": 43.16762638399996,
+        "iteration_total": 261.13942440900064
+      }
+    },
+    {
+      "iteration": 3,
+      "population": {
+        "size": 20,
+        "previous_gamma_elites": 5,
+        "new_rl_candidates": 15,
+        "selected_rl_best_reward": 16.508275989791155,
+        "selected_rl_best_tuples": [
+          [
+            7,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            6,
+            2
+          ]
+        ],
+        "selected_rl_mean_reward": 8.578184603195043
+      },
+      "gamma": {
+        "elite_count": 5,
+        "elites": [
+          {
+            "native_gamma_rank": 1,
+            "native_gamma_edp": 9761629563590.111,
+            "projected_timeloop_edp": 9265995499414.367,
+            "projected_timeloop_energy_pJ": 74475915472.40201,
+            "projected_timeloop_cycles": 124416000.0,
+            "projected_timeloop_utilization": 0.75,
+            "projected_tuples": [
+              [
+                7,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                8,
+                2
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=4 C=2 F=2 P=12 Q=1 R=1 S=1 T=1",
+                  "permutation": "CPFKRSTQN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=4 C=4 F=1 P=2 Q=20 R=3 S=3 T=1",
+                  "permutation": "CPQKSRTFN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=1 C=2 F=1 P=1 Q=2 R=1 S=1 T=3",
+                  "permutation": "TCQRSPFKN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=1 F=60 P=5 Q=3 R=1 S=1 T=1",
+                  "permutation": "PQFKRSTCN"
+                }
+              ]
+            }
+          },
+          {
+            "native_gamma_rank": 2,
+            "native_gamma_edp": 10236210804906.838,
+            "projected_timeloop_edp": 7540655420159.166,
+            "projected_timeloop_energy_pJ": 75760507291.6583,
+            "projected_timeloop_cycles": 99532800.0,
+            "projected_timeloop_utilization": 0.9375,
+            "projected_tuples": [
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                4,
+                5
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=4 C=1 F=3 P=1 Q=20 R=1 S=1 T=1",
+                  "permutation": "QFKRSTPCN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=4 C=8 F=2 P=4 Q=1 R=3 S=3 T=1",
+                  "permutation": "PFKSRCTQN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=1 C=2 F=2 P=1 Q=2 R=1 S=1 T=3",
+                  "permutation": "CTQFRSPKN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=1 F=10 P=30 Q=3 R=1 S=1 T=1",
+                  "permutation": "QFKPRSTCN"
+                }
+              ]
+            }
+          },
+          {
+            "native_gamma_rank": 3,
+            "native_gamma_edp": 12459886224435.25,
+            "projected_timeloop_edp": 8732347305197.073,
+            "projected_timeloop_energy_pJ": 70186690660.3417,
+            "projected_timeloop_cycles": 124416000.0,
+            "projected_timeloop_utilization": 0.75,
+            "projected_tuples": [
+              [
+                6,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                4,
+                5
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=4 C=1 F=2 P=2 Q=12 R=1 S=1 T=1",
+                  "permutation": "FKQPRSTCN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=4 C=16 F=10 P=1 Q=2 R=1 S=1 T=3",
+                  "permutation": "KCFTQRSPN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=1 F=1 P=1 Q=1 R=3 S=3 T=1",
+                  "permutation": "RSKTPQFCN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=1 C=1 F=6 P=60 Q=5 R=1 S=1 T=1",
+                  "permutation": "QFPRSTCKN"
+                }
+              ]
+            }
+          },
+          {
+            "native_gamma_rank": 4,
+            "native_gamma_edp": 12774259792513.975,
+            "projected_timeloop_edp": 12312291215089.576,
+            "projected_timeloop_energy_pJ": 82467228324.66333,
+            "projected_timeloop_cycles": 149299200.0,
+            "projected_timeloop_utilization": 0.625,
+            "projected_tuples": [
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=2 C=4 F=4 P=1 Q=5 R=1 S=1 T=1",
+                  "permutation": "FQCKRSTPN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=8 C=2 F=3 P=2 Q=6 R=1 S=3 T=3",
+                  "permutation": "FPQTCSKRN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=1 C=1 F=2 P=2 Q=1 R=3 S=1 T=1",
+                  "permutation": "RFPSTQCKN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=2 F=5 P=30 Q=4 R=1 S=1 T=1",
+                  "permutation": "FPQCKRSTN"
+                }
+              ]
+            }
+          },
+          {
+            "native_gamma_rank": 5,
+            "native_gamma_edp": 12774259792513.975,
+            "projected_timeloop_edp": 12312291215089.576,
+            "projected_timeloop_energy_pJ": 82467228324.66333,
+            "projected_timeloop_cycles": 149299200.0,
+            "projected_timeloop_utilization": 0.625,
+            "projected_tuples": [
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                5
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ]
+            ],
+            "projected_memmap": {
+              "mapping": [
+                {
+                  "target": "GlobalBuffer",
+                  "type": "spatial",
+                  "factors": "N=1 K=2 C=4 F=4 P=1 Q=5 R=1 S=1 T=1",
+                  "permutation": "FQCKRSTPN"
+                },
+                {
+                  "target": "RegisterFile",
+                  "type": "temporal",
+                  "factors": "N=1 K=8 C=2 F=3 P=2 Q=6 R=1 S=3 T=3",
+                  "permutation": "FPQTCSKRN"
+                },
+                {
+                  "target": "GlobalBuffer",
+                  "type": "temporal",
+                  "factors": "N=1 K=1 C=1 F=2 P=2 Q=1 R=3 S=1 T=1",
+                  "permutation": "RFPSTQCKN"
+                },
+                {
+                  "target": "MainMemory",
+                  "type": "temporal",
+                  "factors": "N=1 K=2 C=2 F=5 P=30 Q=4 R=1 S=1 T=1",
+                  "permutation": "FPQCKRSTN"
+                }
+              ]
+            }
+          }
+        ],
+        "best_native_gamma_edp": 9761629563590.111,
+        "best_native_gamma_rank": 1,
+        "best_native_gamma_tuples": [
+          [
+            7,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            8,
+            2
+          ]
+        ],
+        "best_projected_timeloop_edp": 7540655420159.166,
+        "best_projected_native_gamma_rank": 2
+      },
+      "feedback": {
+        "elite_count": 5,
+        "steps_per_elite": 4,
+        "feedback_steps": 20
+      },
+      "continued_rl": {
+        "mapping_count": 1021,
+        "best_rl_reward": 11.230615944472225,
+        "best_rl_tuples": [
+          [
+            5,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            6,
+            2
+          ]
+        ],
+        "mean_rl_reward": 3.6831583230479623,
+        "top_rl_rewards": [
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          11.230615944472225,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463,
+          8.58425439561463
+        ]
+      },
+      "timing_seconds": {
+        "gamma": 156.72257245699802,
+        "feedback": 119.9549828220006,
+        "continued_rl": 40.56931420199908,
+        "iteration_total": 351.29872397500003
+      }
+    }
+  ],
+  "final": {
+    "final_mapping_count": 1021,
+    "best_final_rl_reward": 11.230615944472225,
+    "best_final_rl_tuples": [
+      [
+        5,
+        2
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        6,
+        2
+      ]
+    ],
+    "mean_final_rl_reward": 3.6831583230479623,
+    "best_native_gamma": {
+      "iteration": 1,
+      "native_gamma_rank": 1,
+      "native_gamma_edp": 8417428096508.159,
+      "projected_timeloop_edp": 7299057373057.175,
+      "projected_tuples": [
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          2
+        ]
+      ]
+    },
+    "best_projected_timeloop": {
+      "iteration": 1,
+      "native_gamma_rank": 4,
+      "native_gamma_edp": 9404058673946.93,
+      "projected_timeloop_edp": 7293716672284.733,
+      "projected_tuples": [
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ]
+      ]
+    }
+  }
+}

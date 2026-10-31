@@ -38,3 +38,19 @@ best_rl_map.yaml
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# IDE and editor settings
+.vscode/
+
+# Local build artifacts
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Temporary status and shell files
+STATUS=0
+
+# Local environment files
+.env
+.env.*

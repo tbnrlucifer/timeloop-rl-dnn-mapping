@@ -1,0 +1,724 @@
+{
+  "experiment": {
+    "name": "RL-only PPO baseline",
+    "workload_name": "pointwise",
+    "dimension": [
+      1,
+      64,
+      32,
+      112,
+      112,
+      112,
+      1,
+      1,
+      1
+    ],
+    "seed": 1,
+    "ppo_episodes_per_initialization": 3,
+    "initializations": 10,
+    "evaluation_budget": 5,
+    "unique_candidates_available": 15359,
+    "unique_candidates_selected": 5,
+    "timeloop_evaluations_succeeded": 4,
+    "timeloop_evaluations_failed": 1,
+    "selection": "seeded random sample of unique retained PPO candidates",
+    "fitness_objective": "Timeloop EDP",
+    "gamma_used": false
+  },
+  "final": {
+    "best_edp": 615920347297.8423,
+    "best_mapping": {
+      "mapping": [
+        {
+          "target": "GlobalBuffer",
+          "type": "spatial",
+          "factors": "R=1 S=1 T=1 P=2 Q=7 F=1 C=4 K=4 N=1",
+          "permutation": "CPKQRSTFN"
+        },
+        {
+          "target": "RegisterFile",
+          "type": "temporal",
+          "factors": "R=1 S=1 T=1 P=28 Q=1 F=2 C=8 K=2 N=1",
+          "permutation": "CPFKRSTQN"
+        },
+        {
+          "target": "GlobalBuffer",
+          "type": "temporal",
+          "factors": "R=1 S=1 T=1 P=2 Q=1 F=1 C=1 K=4 N=1",
+          "permutation": "PKRSTQFCN"
+        },
+        {
+          "target": "MainMemory",
+          "type": "temporal",
+          "factors": "R=1 S=1 T=1 P=1 Q=16 F=56 C=1 K=2 N=1",
+          "permutation": "QFKRSTPCN"
+        }
+      ]
+    },
+    "best_tuples": [
+      [
+        7,
+        2
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        5,
+        2
+      ]
+    ]
+  },
+  "evaluated_candidates": [
+    {
+      "edp": 615920347297.8423,
+      "rl_reward": 3.1655481120743145,
+      "tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "mapping": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "R=1 S=1 T=1 P=2 Q=7 F=1 C=4 K=4 N=1",
+            "permutation": "CPKQRSTFN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "R=1 S=1 T=1 P=28 Q=1 F=2 C=8 K=2 N=1",
+            "permutation": "CPFKRSTQN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "R=1 S=1 T=1 P=2 Q=1 F=1 C=1 K=4 N=1",
+            "permutation": "PKRSTQFCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "R=1 S=1 T=1 P=1 Q=16 F=56 C=1 K=2 N=1",
+            "permutation": "QFKRSTPCN"
+          }
+        ]
+      },
+      "episode": 0
+    },
+    {
+      "edp": 1832570618320.2214,
+      "rl_reward": 10.176371357969039,
+      "tuples": [
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "mapping": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "R=1 S=1 T=1 P=7 Q=14 F=1 C=1 K=2 N=1",
+            "permutation": "QPKRSTFCN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "R=1 S=1 T=1 P=1 Q=4 F=7 C=8 K=8 N=1",
+            "permutation": "CKQFRSTPN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "R=1 S=1 T=1 P=1 Q=1 F=1 C=2 K=1 N=1",
+            "permutation": "CRSTPQFKN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "R=1 S=1 T=1 P=16 Q=2 F=16 C=2 K=4 N=1",
+            "permutation": "FQPKCRSTN"
+          }
+        ]
+      },
+      "episode": 1
+    },
+    {
+      "edp": 4135533619442.9546,
+      "rl_reward": 16.13148582317774,
+      "tuples": [
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "mapping": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "R=1 S=1 T=1 P=2 Q=28 F=1 C=4 K=1 N=1",
+            "permutation": "QCPRSTFKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "R=1 S=1 T=1 P=2 Q=4 F=8 C=2 K=8 N=1",
+            "permutation": "PKFCQRSTN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "R=1 S=1 T=1 P=1 Q=1 F=1 C=2 K=1 N=1",
+            "permutation": "CRSTPQFKN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "R=1 S=1 T=1 P=28 Q=1 F=14 C=2 K=8 N=1",
+            "permutation": "FPKCRSTQN"
+          }
+        ]
+      },
+      "episode": 1
+    },
+    {
+      "edp": 5791078235582.35,
+      "rl_reward": 12.668247408535628,
+      "tuples": [
+        [
+          4,
+          7
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "mapping": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "R=1 S=1 T=1 P=14 Q=2 F=1 C=4 K=2 N=1",
+            "permutation": "PKQCRSTFN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "R=1 S=1 T=1 P=4 Q=1 F=28 C=1 K=4 N=1",
+            "permutation": "PFKRSTQCN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "R=1 S=1 T=1 P=1 Q=2 F=1 C=2 K=1 N=1",
+            "permutation": "QCRSTPFKN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "R=1 S=1 T=1 P=2 Q=28 F=4 C=4 K=8 N=1",
+            "permutation": "KQFCPRSTN"
+          }
+        ]
+      },
+      "episode": 0
+    }
+  ],
+  "runtime_seconds": 27.934316480000234
+}

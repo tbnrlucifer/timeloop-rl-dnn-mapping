@@ -1,0 +1,3809 @@
+{
+  "experiment": {
+    "name": "Controlled 20-candidate GAMMA-to-PPO selection test",
+    "timestamp": "20260912_055753",
+    "dimension": [
+      1,
+      32,
+      16,
+      120,
+      120,
+      120,
+      3,
+      3,
+      3
+    ],
+    "gamma_population": 20,
+    "gamma_generations": 5,
+    "gamma_parents_ratio": 0.5,
+    "gamma_elite_ratio": 0.25,
+    "gamma_inject_ratio": 0.1
+  },
+  "seed_source": {
+    "method": "Fresh initial RL training; top 20 PPO mappings by RL reward",
+    "rl_mapping_count": 10145,
+    "top20_rewards": [
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0,
+      25.0
+    ]
+  },
+  "candidates_by_native_rank": [
+    {
+      "original_index": 0,
+      "native_gamma_rank": 1,
+      "native_gamma_edp": 9144731182818.885,
+      "projected_timeloop_edp": 8616605432465.583,
+      "projected_timeloop_energy_pJ": 69256409404.46231,
+      "projected_timeloop_cycles": 124416000.0,
+      "projected_timeloop_utilization": 0.75,
+      "projected_tuples": [
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=4 F=4 P=6 Q=2 R=1 S=1 T=1",
+            "permutation": "FCQPRSTKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=8 C=4 F=6 P=1 Q=2 R=3 S=3 T=1",
+            "permutation": "FCQSRKTPN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=1 F=1 P=1 Q=2 R=1 S=1 T=3",
+            "permutation": "TKQRSPFCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=1 C=1 F=5 P=20 Q=15 R=1 S=1 T=1",
+            "permutation": "FQPRSTCKN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 1
+    },
+    {
+      "original_index": 1,
+      "native_gamma_rank": 2,
+      "native_gamma_edp": 17191362420036.182,
+      "projected_timeloop_edp": 8686100061698.532,
+      "projected_timeloop_energy_pJ": 69814976061.74875,
+      "projected_timeloop_cycles": 124416000.0,
+      "projected_timeloop_utilization": 0.75,
+      "projected_tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=8 F=1 P=6 Q=4 R=1 S=1 T=1",
+            "permutation": "CPQRSTFKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=8 C=1 F=6 P=2 Q=3 R=3 S=3 T=3",
+            "permutation": "TFSQKRPCN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=2 F=2 P=1 Q=1 R=1 S=1 T=1",
+            "permutation": "KCFRSTPQN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=10 P=10 Q=10 R=1 S=1 T=1",
+            "permutation": "FPQKRSTCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 2
+    },
+    {
+      "original_index": 2,
+      "native_gamma_rank": 3,
+      "native_gamma_edp": 20849061068233.56,
+      "projected_timeloop_edp": 17255332507528.621,
+      "projected_timeloop_energy_pJ": 104017966986.9347,
+      "projected_timeloop_cycles": 165888000.0,
+      "projected_timeloop_utilization": 0.5625,
+      "projected_tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=8 F=3 P=3 Q=2 R=1 S=1 T=1",
+            "permutation": "CFQPRSTKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=8 C=2 F=4 P=10 Q=1 R=3 S=1 T=3",
+            "permutation": "CFPTKRSQN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=2 P=2 Q=1 R=1 S=1 T=1",
+            "permutation": "FPKRSTQCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=5 P=2 Q=60 R=1 S=3 T=1",
+            "permutation": "FPSQKRTCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 18
+    },
+    {
+      "original_index": 3,
+      "native_gamma_rank": 4,
+      "native_gamma_edp": 23488616589528.12,
+      "projected_timeloop_edp": 10392179990835.395,
+      "projected_timeloop_energy_pJ": 104409601566.87437,
+      "projected_timeloop_cycles": 99532800.0,
+      "projected_timeloop_utilization": 0.9375,
+      "projected_tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=4 F=2 P=1 Q=30 R=1 S=1 T=1",
+            "permutation": "CQFRSTPKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=16 C=1 F=2 P=6 Q=2 R=1 S=3 T=3",
+            "permutation": "FPTSQKRCN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=1 C=4 F=2 P=1 Q=1 R=1 S=1 T=1",
+            "permutation": "CFRSTPQKN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=15 P=20 Q=2 R=3 S=1 T=1",
+            "permutation": "FPQRKSTCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 5
+    },
+    {
+      "original_index": 4,
+      "native_gamma_rank": 5,
+      "native_gamma_edp": 23488616589528.12,
+      "projected_timeloop_edp": 10392179990835.395,
+      "projected_timeloop_energy_pJ": 104409601566.87437,
+      "projected_timeloop_cycles": 99532800.0,
+      "projected_timeloop_utilization": 0.9375,
+      "projected_tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=4 F=2 P=1 Q=30 R=1 S=1 T=1",
+            "permutation": "CQFRSTPKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=16 C=1 F=2 P=6 Q=2 R=1 S=3 T=3",
+            "permutation": "FPTSQKRCN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=1 C=4 F=2 P=1 Q=1 R=1 S=1 T=1",
+            "permutation": "CFRSTPQKN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=15 P=20 Q=2 R=3 S=1 T=1",
+            "permutation": "FPQRKSTCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 6
+    },
+    {
+      "original_index": 5,
+      "native_gamma_rank": 6,
+      "native_gamma_edp": 25167501795714.97,
+      "projected_timeloop_edp": 10521180895343.031,
+      "projected_timeloop_energy_pJ": 105705665824.16081,
+      "projected_timeloop_cycles": 99532800.0,
+      "projected_timeloop_utilization": 0.9375,
+      "projected_tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=2 F=2 P=2 Q=30 R=1 S=1 T=1",
+            "permutation": "CFPQRSTKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=8 F=12 P=1 Q=2 R=1 S=3 T=1",
+            "permutation": "CFSQKRTPN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=1 F=1 P=1 Q=1 R=1 S=1 T=3",
+            "permutation": "KTRSPQFCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=5 P=60 Q=2 R=3 S=1 T=1",
+            "permutation": "FPQRKSTCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 7
+    },
+    {
+      "original_index": 6,
+      "native_gamma_rank": 7,
+      "native_gamma_edp": 25167501795714.97,
+      "projected_timeloop_edp": 10521180895343.031,
+      "projected_timeloop_energy_pJ": 105705665824.16081,
+      "projected_timeloop_cycles": 99532800.0,
+      "projected_timeloop_utilization": 0.9375,
+      "projected_tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=2 F=2 P=2 Q=30 R=1 S=1 T=1",
+            "permutation": "CFPQRSTKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=8 F=12 P=1 Q=2 R=1 S=3 T=1",
+            "permutation": "CFSQKRTPN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=1 F=1 P=1 Q=1 R=1 S=1 T=3",
+            "permutation": "KTRSPQFCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=5 P=60 Q=2 R=3 S=1 T=1",
+            "permutation": "FPQRKSTCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 8
+    },
+    {
+      "original_index": 7,
+      "native_gamma_rank": 8,
+      "native_gamma_edp": 25167501795714.97,
+      "projected_timeloop_edp": 10521180895343.031,
+      "projected_timeloop_energy_pJ": 105705665824.16081,
+      "projected_timeloop_cycles": 99532800.0,
+      "projected_timeloop_utilization": 0.9375,
+      "projected_tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=2 F=2 P=2 Q=30 R=1 S=1 T=1",
+            "permutation": "CFPQRSTKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=8 F=12 P=1 Q=2 R=1 S=3 T=1",
+            "permutation": "CFSQKRTPN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=1 F=1 P=1 Q=1 R=1 S=1 T=3",
+            "permutation": "KTRSPQFCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=5 P=60 Q=2 R=3 S=1 T=1",
+            "permutation": "FPQRKSTCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 9
+    },
+    {
+      "original_index": 8,
+      "native_gamma_rank": 9,
+      "native_gamma_edp": 25328139735666.543,
+      "projected_timeloop_edp": 15079971312650.91,
+      "projected_timeloop_energy_pJ": 80804030096.08041,
+      "projected_timeloop_cycles": 186624000.0,
+      "projected_timeloop_utilization": 0.5,
+      "projected_tuples": [
+        [
+          4,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=2 C=8 F=1 P=2 Q=4 R=1 S=1 T=1",
+            "permutation": "PCKQRSTFN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=2 F=4 P=5 Q=3 R=3 S=3 T=1",
+            "permutation": "SCQKFPRTN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=1 C=1 F=6 P=1 Q=1 R=1 S=1 T=3",
+            "permutation": "FTRSPQCKN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=1 F=5 P=12 Q=10 R=1 S=1 T=1",
+            "permutation": "FKPQRSTCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 16
+    },
+    {
+      "original_index": 9,
+      "native_gamma_rank": 10,
+      "native_gamma_edp": 25943441337329.137,
+      "projected_timeloop_edp": 11549616487675.4,
+      "projected_timeloop_energy_pJ": 69622977476.82413,
+      "projected_timeloop_cycles": 165888000.0,
+      "projected_timeloop_utilization": 0.5625,
+      "projected_tuples": [
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=4 F=12 P=1 Q=3 R=1 S=1 T=1",
+            "permutation": "FCQRSTPKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=8 C=4 F=2 P=6 Q=1 R=3 S=3 T=1",
+            "permutation": "FCPKSRTQN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=1 F=1 P=1 Q=2 R=1 S=1 T=3",
+            "permutation": "TKQRSPFCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=1 C=1 F=5 P=20 Q=20 R=1 S=1 T=1",
+            "permutation": "FQPRSTCKN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 11
+    },
+    {
+      "original_index": 10,
+      "native_gamma_rank": 11,
+      "native_gamma_edp": 32130660003581.875,
+      "projected_timeloop_edp": 17016579582483.041,
+      "projected_timeloop_energy_pJ": 127065259725.82916,
+      "projected_timeloop_cycles": 133920000.0,
+      "projected_timeloop_utilization": 0.75,
+      "projected_tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=16 F=1 P=3 Q=4 R=1 S=1 T=1",
+            "permutation": "CQPRSTFKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=1 F=40 P=1 Q=2 R=3 S=1 T=3",
+            "permutation": "FQKTRSPCN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=3 P=1 Q=1 R=1 S=1 T=1",
+            "permutation": "FKRSTPQCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=1 F=1 P=40 Q=15 R=1 S=3 T=1",
+            "permutation": "PSQKRTFCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 17
+    },
+    {
+      "original_index": 11,
+      "native_gamma_rank": 12,
+      "native_gamma_edp": 37292310007260.49,
+      "projected_timeloop_edp": 12827307332843.676,
+      "projected_timeloop_energy_pJ": 103100142528.64322,
+      "projected_timeloop_cycles": 124416000.0,
+      "projected_timeloop_utilization": 0.75,
+      "projected_tuples": [
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=2 F=1 P=4 Q=24 R=1 S=1 T=1",
+            "permutation": "QPCRSTFKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=16 C=1 F=2 P=3 Q=1 R=3 S=3 T=3",
+            "permutation": "PSRTKFQCN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=2 F=4 P=1 Q=1 R=1 S=1 T=1",
+            "permutation": "KFCRSTPQN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=1 C=4 F=15 P=10 Q=5 R=1 S=1 T=1",
+            "permutation": "FCQPRSTKN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 13
+    },
+    {
+      "original_index": 12,
+      "native_gamma_rank": 13,
+      "native_gamma_edp": 39499628626895.47,
+      "projected_timeloop_edp": 9067746621356.598,
+      "projected_timeloop_energy_pJ": 72882479917.02513,
+      "projected_timeloop_cycles": 124416000.0,
+      "projected_timeloop_utilization": 0.75,
+      "projected_tuples": [
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=4 F=24 P=1 Q=2 R=1 S=1 T=1",
+            "permutation": "FCQRSTPKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=8 C=4 F=1 P=6 Q=2 R=1 S=3 T=3",
+            "permutation": "CQPTKSRFN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=1 P=2 Q=2 R=3 S=1 T=1",
+            "permutation": "RKQPSTFCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=5 P=10 Q=15 R=1 S=1 T=1",
+            "permutation": "FQPKRSTCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 3
+    },
+    {
+      "original_index": 13,
+      "native_gamma_rank": 14,
+      "native_gamma_edp": 63397602789238.09,
+      "projected_timeloop_edp": 25480740333207.8,
+      "projected_timeloop_energy_pJ": 102401380582.91458,
+      "projected_timeloop_cycles": 248832000.0,
+      "projected_timeloop_utilization": 0.375,
+      "projected_tuples": [
+        [
+          4,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=4 C=4 F=1 P=2 Q=3 R=1 S=1 T=1",
+            "permutation": "PCKQRSTFN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=12 P=2 Q=4 R=3 S=3 T=3",
+            "permutation": "RQKFPSTCN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=1 C=1 F=10 P=1 Q=1 R=1 S=1 T=1",
+            "permutation": "FRSTPQCKN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=4 F=1 P=30 Q=10 R=1 S=1 T=1",
+            "permutation": "KCPQRSTFN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 19
+    },
+    {
+      "original_index": 14,
+      "native_gamma_rank": 15,
+      "native_gamma_edp": 108489576252544.62,
+      "projected_timeloop_edp": 12182384344414.197,
+      "projected_timeloop_energy_pJ": 73437405625.56784,
+      "projected_timeloop_cycles": 165888000.0,
+      "projected_timeloop_utilization": 0.5625,
+      "projected_tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=8 F=6 P=1 Q=3 R=1 S=1 T=1",
+            "permutation": "CFQRSTPKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=8 C=2 F=2 P=4 Q=4 R=3 S=1 T=3",
+            "permutation": "PQRKCFTSN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=2 P=2 Q=1 R=1 S=3 T=1",
+            "permutation": "FPSKRTQCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=5 P=15 Q=10 R=1 S=1 T=1",
+            "permutation": "FPQKRSTCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 12
+    },
+    {
+      "original_index": 15,
+      "native_gamma_rank": 16,
+      "native_gamma_edp": 146034426256236.8,
+      "projected_timeloop_edp": 10645972732796.36,
+      "projected_timeloop_energy_pJ": 106959441840.24121,
+      "projected_timeloop_cycles": 99532800.0,
+      "projected_timeloop_utilization": 0.9375,
+      "projected_tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=4 F=1 P=2 Q=30 R=1 S=1 T=1",
+            "permutation": "CPQRSTFKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=4 F=24 P=1 Q=2 R=1 S=3 T=1",
+            "permutation": "FSQKCRTPN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=1 F=1 P=1 Q=1 R=1 S=1 T=3",
+            "permutation": "TKRSPQFCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=5 P=60 Q=2 R=3 S=1 T=1",
+            "permutation": "FPQRKSTCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 10
+    },
+    {
+      "original_index": 16,
+      "native_gamma_rank": 17,
+      "native_gamma_edp": 152559923907281.66,
+      "projected_timeloop_edp": 10263722215006.166,
+      "projected_timeloop_energy_pJ": 82495195272.36182,
+      "projected_timeloop_cycles": 124416000.0,
+      "projected_timeloop_utilization": 0.75,
+      "projected_tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=2 C=16 F=1 P=1 Q=6 R=1 S=1 T=1",
+            "permutation": "CKQRSTPFN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=10 P=8 Q=1 R=3 S=3 T=3",
+            "permutation": "KSFPRTQCN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=1 P=5 Q=1 R=1 S=1 T=1",
+            "permutation": "PKRSTQFCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=1 F=12 P=3 Q=20 R=1 S=1 T=1",
+            "permutation": "PKFQRSTCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 4
+    },
+    {
+      "original_index": 17,
+      "native_gamma_rank": 18,
+      "native_gamma_edp": 165295604440865.7,
+      "projected_timeloop_edp": 13793106400164.633,
+      "projected_timeloop_energy_pJ": 81658534622.55276,
+      "projected_timeloop_cycles": 168912000.0,
+      "projected_timeloop_utilization": 0.5625,
+      "projected_tuples": [
+        [
+          6,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=1 F=4 P=6 Q=6 R=1 S=1 T=1",
+            "permutation": "FQPRSTCKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=32 C=4 F=1 P=2 Q=2 R=1 S=1 T=3",
+            "permutation": "CQPKTRSFN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=1 C=4 F=2 P=1 Q=1 R=3 S=3 T=1",
+            "permutation": "FCSRTPQKN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=1 C=1 F=15 P=10 Q=10 R=1 S=1 T=1",
+            "permutation": "FQPRSTCKN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 15
+    },
+    {
+      "original_index": 18,
+      "native_gamma_rank": 19,
+      "native_gamma_edp": 212973604522361.34,
+      "projected_timeloop_edp": 31066738355829.75,
+      "projected_timeloop_energy_pJ": 169368219034.37186,
+      "projected_timeloop_cycles": 183427201.0,
+      "projected_timeloop_utilization": 0.9375,
+      "projected_tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=4 F=3 P=10 Q=2 R=1 S=1 T=1",
+            "permutation": "CQPFRSTKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=8 C=2 F=2 P=2 Q=12 R=1 S=1 T=3",
+            "permutation": "QPTKFCRSN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=1 C=1 F=2 P=1 Q=1 R=1 S=3 T=1",
+            "permutation": "FSRTPQCKN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=2 F=10 P=6 Q=5 R=3 S=1 T=1",
+            "permutation": "FCQPRKSTN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 20
+    },
+    {
+      "original_index": 19,
+      "native_gamma_rank": 20,
+      "native_gamma_edp": 222705722498406.1,
+      "projected_timeloop_edp": 13252669394371.139,
+      "projected_timeloop_energy_pJ": 106519011978.9347,
+      "projected_timeloop_cycles": 124416000.0,
+      "projected_timeloop_utilization": 0.75,
+      "projected_tuples": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=8 F=12 P=1 Q=2 R=1 S=1 T=1",
+            "permutation": "CFQRSTPKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=2 F=2 P=2 Q=30 R=1 S=3 T=1",
+            "permutation": "CFPQSKRTN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=8 C=1 F=1 P=1 Q=1 R=1 S=1 T=3",
+            "permutation": "KTRSPQFCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=2 C=1 F=5 P=60 Q=2 R=3 S=1 T=1",
+            "permutation": "FPQRKSTCN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 14
+    }
+  ],
+  "summary": {
+    "best_native_gamma": {
+      "native_gamma_rank": 1,
+      "projected_timeloop_rank": 1,
+      "native_gamma_edp": 9144731182818.885,
+      "projected_timeloop_edp": 8616605432465.583
+    },
+    "best_projected_timeloop": {
+      "original_index": 0,
+      "native_gamma_rank": 1,
+      "native_gamma_edp": 9144731182818.885,
+      "projected_timeloop_edp": 8616605432465.583,
+      "projected_timeloop_energy_pJ": 69256409404.46231,
+      "projected_timeloop_cycles": 124416000.0,
+      "projected_timeloop_utilization": 0.75,
+      "projected_tuples": [
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "projected_memmap": {
+        "mapping": [
+          {
+            "target": "GlobalBuffer",
+            "type": "spatial",
+            "factors": "N=1 K=1 C=4 F=4 P=6 Q=2 R=1 S=1 T=1",
+            "permutation": "FCQPRSTKN"
+          },
+          {
+            "target": "RegisterFile",
+            "type": "temporal",
+            "factors": "N=1 K=8 C=4 F=6 P=1 Q=2 R=3 S=3 T=1",
+            "permutation": "FCQSRKTPN"
+          },
+          {
+            "target": "GlobalBuffer",
+            "type": "temporal",
+            "factors": "N=1 K=4 C=1 F=1 P=1 Q=2 R=1 S=1 T=3",
+            "permutation": "TKQRSPFCN"
+          },
+          {
+            "target": "MainMemory",
+            "type": "temporal",
+            "factors": "N=1 K=1 C=1 F=5 P=20 Q=15 R=1 S=1 T=1",
+            "permutation": "FQPRSTCKN"
+          }
+        ]
+      },
+      "projected_timeloop_rank": 1
+    },
+    "projected_top5_native_ranks": [
+      1,
+      2,
+      13,
+      17,
+      4
+    ],
+    "projected_top5_contains_outside_native_top5": true,
+    "outside_native_top5_candidates": [
+      {
+        "original_index": 12,
+        "native_gamma_rank": 13,
+        "native_gamma_edp": 39499628626895.47,
+        "projected_timeloop_edp": 9067746621356.598,
+        "projected_timeloop_energy_pJ": 72882479917.02513,
+        "projected_timeloop_cycles": 124416000.0,
+        "projected_timeloop_utilization": 0.75,
+        "projected_tuples": [
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            8,
+            2
+          ]
+        ],
+        "projected_memmap": {
+          "mapping": [
+            {
+              "target": "GlobalBuffer",
+              "type": "spatial",
+              "factors": "N=1 K=1 C=4 F=24 P=1 Q=2 R=1 S=1 T=1",
+              "permutation": "FCQRSTPKN"
+            },
+            {
+              "target": "RegisterFile",
+              "type": "temporal",
+              "factors": "N=1 K=8 C=4 F=1 P=6 Q=2 R=1 S=3 T=3",
+              "permutation": "CQPTKSRFN"
+            },
+            {
+              "target": "GlobalBuffer",
+              "type": "temporal",
+              "factors": "N=1 K=2 C=1 F=1 P=2 Q=2 R=3 S=1 T=1",
+              "permutation": "RKQPSTFCN"
+            },
+            {
+              "target": "MainMemory",
+              "type": "temporal",
+              "factors": "N=1 K=2 C=1 F=5 P=10 Q=15 R=1 S=1 T=1",
+              "permutation": "FQPKRSTCN"
+            }
+          ]
+        },
+        "projected_timeloop_rank": 3
+      },
+      {
+        "original_index": 16,
+        "native_gamma_rank": 17,
+        "native_gamma_edp": 152559923907281.66,
+        "projected_timeloop_edp": 10263722215006.166,
+        "projected_timeloop_energy_pJ": 82495195272.36182,
+        "projected_timeloop_cycles": 124416000.0,
+        "projected_timeloop_utilization": 0.75,
+        "projected_tuples": [
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "projected_memmap": {
+          "mapping": [
+            {
+              "target": "GlobalBuffer",
+              "type": "spatial",
+              "factors": "N=1 K=2 C=16 F=1 P=1 Q=6 R=1 S=1 T=1",
+              "permutation": "CKQRSTPFN"
+            },
+            {
+              "target": "RegisterFile",
+              "type": "temporal",
+              "factors": "N=1 K=2 C=1 F=10 P=8 Q=1 R=3 S=3 T=3",
+              "permutation": "KSFPRTQCN"
+            },
+            {
+              "target": "GlobalBuffer",
+              "type": "temporal",
+              "factors": "N=1 K=2 C=1 F=1 P=5 Q=1 R=1 S=1 T=1",
+              "permutation": "PKRSTQFCN"
+            },
+            {
+              "target": "MainMemory",
+              "type": "temporal",
+              "factors": "N=1 K=4 C=1 F=12 P=3 Q=20 R=1 S=1 T=1",
+              "permutation": "PKFQRSTCN"
+            }
+          ]
+        },
+        "projected_timeloop_rank": 4
+      }
+    ],
+    "duplicate_projected_tuple_groups": [
+      {
+        "native_gamma_ranks": [
+          4,
+          5
+        ],
+        "projected_tuples": [
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            8,
+            2
+          ]
+        ]
+      },
+      {
+        "native_gamma_ranks": [
+          6,
+          7,
+          8
+        ],
+        "projected_tuples": [
+          [
+            7,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            8,
+            2
+          ]
+        ]
+      }
+    ],
+    "rank_displacements": [
+      {
+        "native_gamma_rank": 1,
+        "projected_timeloop_rank": 1,
+        "displacement": 0
+      },
+      {
+        "native_gamma_rank": 2,
+        "projected_timeloop_rank": 2,
+        "displacement": 0
+      },
+      {
+        "native_gamma_rank": 3,
+        "projected_timeloop_rank": 18,
+        "displacement": 15
+      },
+      {
+        "native_gamma_rank": 4,
+        "projected_timeloop_rank": 5,
+        "displacement": 1
+      },
+      {
+        "native_gamma_rank": 5,
+        "projected_timeloop_rank": 6,
+        "displacement": 1
+      },
+      {
+        "native_gamma_rank": 6,
+        "projected_timeloop_rank": 7,
+        "displacement": 1
+      },
+      {
+        "native_gamma_rank": 7,
+        "projected_timeloop_rank": 8,
+        "displacement": 1
+      },
+      {
+        "native_gamma_rank": 8,
+        "projected_timeloop_rank": 9,
+        "displacement": 1
+      },
+      {
+        "native_gamma_rank": 9,
+        "projected_timeloop_rank": 16,
+        "displacement": 7
+      },
+      {
+        "native_gamma_rank": 10,
+        "projected_timeloop_rank": 11,
+        "displacement": 1
+      },
+      {
+        "native_gamma_rank": 11,
+        "projected_timeloop_rank": 17,
+        "displacement": 6
+      },
+      {
+        "native_gamma_rank": 12,
+        "projected_timeloop_rank": 13,
+        "displacement": 1
+      },
+      {
+        "native_gamma_rank": 13,
+        "projected_timeloop_rank": 3,
+        "displacement": -10
+      },
+      {
+        "native_gamma_rank": 14,
+        "projected_timeloop_rank": 19,
+        "displacement": 5
+      },
+      {
+        "native_gamma_rank": 15,
+        "projected_timeloop_rank": 12,
+        "displacement": -3
+      },
+      {
+        "native_gamma_rank": 16,
+        "projected_timeloop_rank": 10,
+        "displacement": -6
+      },
+      {
+        "native_gamma_rank": 17,
+        "projected_timeloop_rank": 4,
+        "displacement": -13
+      },
+      {
+        "native_gamma_rank": 18,
+        "projected_timeloop_rank": 15,
+        "displacement": -3
+      },
+      {
+        "native_gamma_rank": 19,
+        "projected_timeloop_rank": 20,
+        "displacement": 1
+      },
+      {
+        "native_gamma_rank": 20,
+        "projected_timeloop_rank": 14,
+        "displacement": -6
+      }
+    ]
+  }
+}

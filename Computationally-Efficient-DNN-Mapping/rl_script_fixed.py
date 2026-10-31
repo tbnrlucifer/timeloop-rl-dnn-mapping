@@ -17,6 +17,7 @@ Key paper details implemented:
   - Table 4: spatial<=256 PEs, RF<=672B, SharedMem<=108kB
 """
 
+import os
 import numpy as np
 import torch
 import torch.nn as nn
@@ -25,6 +26,7 @@ import torch.nn.functional as F
 import time
 import pickle
 from collections import defaultdict
+from mapping_validation import validate_ppo_tuples
 
 
 # ── Device ───────────────────────────────────────────────────────────────────
@@ -246,7 +248,7 @@ def swapTupleList(tuples, action):
 # ── Trajectory collection ─────────────────────────────────────────────────────
 
 def collect_trajectories(acnet, init_tensor, init_tuples,
-                         wt_threshold, ot_threshold, max_steps=1024):
+                         wt_threshold, ot_threshold, max_steps=512):
     traj   = {'states': [], 'actions': [], 'act_probs': [], 'rewards': []}
     pruned = {'tuples': [], 'memmaps': [], 'rewards': []}
 
@@ -474,7 +476,38 @@ def ppo_update(traj, acnet, optimizer,
                 optimizer.step()
 
 
-def train_network(initial_input_list, acnet=None, optimizer=None, episodes=30):
+def tuples_to_state(tuples):
+    """
+    Convert an LPF tuple-list into the normalized state
+    representation used by the PPO network.
+    """
+    mapped = assign_increasing_values(tuples)
+    norm = Normalizer().normalize(mapped)
+
+    return torch.tensor(
+        norm,
+        dtype=torch.float32,
+        device=DEVICE
+    ).unsqueeze(0)
+
+
+def dimension_from_input_list(initial_input_list):
+    """Convert PPO's [R,S,T,P,Q,F,C,K] list to Timeloop [N,K,C,F,P,Q,R,S,T]."""
+    if len(initial_input_list) != 8:
+        raise ValueError(
+            "initial_input_list must contain [R,S,T,P,Q,F,C,K] (8 values)"
+        )
+    r, s, t, p, q, f, c, k = [int(x) for x in initial_input_list]
+    return [1, k, c, f, p, q, r, s, t]
+
+
+def train_network(
+    initial_input_list,
+    acnet=None,
+    optimizer=None,
+    episodes=30,
+    seed_tuples=None
+):
 
     loop_orderings = [
         ([8,7,6,5,4,3,2,1], False),
@@ -489,27 +522,79 @@ def train_network(initial_input_list, acnet=None, optimizer=None, episodes=30):
         ([1,2,3,7,4,5,6,8], False),
     ]
 
-    wt_threshold = 375
-    ot_threshold = 216
+    wt_threshold = int(os.environ.get("LPF_WT_THRESHOLD", "375"))
+    ot_threshold = int(os.environ.get("LPF_OT_THRESHOLD", "216"))
 
-    # 👉 initialize ONLY if not provided
+    # --------------------------------------------------------
+    # Initialize PPO network only on the first call
+    # --------------------------------------------------------
+
     if acnet is None:
-        sample_tuples = build_init_tuples(initial_input_list, loop_orderings[0][0], False)
+
+        sample_tuples = build_init_tuples(
+            initial_input_list,
+            loop_orderings[0][0],
+            False
+        )
+
         mapped = assign_increasing_values(sample_tuples)
-        acnet = ActorCriticNetwork(len(mapped), 3*len(mapped)).to(DEVICE)
-        optimizer = optim.Adam(acnet.parameters(), lr=1e-3)
+
+        acnet = ActorCriticNetwork(
+            len(mapped),
+            3 * len(mapped)
+        ).to(DEVICE)
+
+        optimizer = optim.Adam(
+            acnet.parameters(),
+            lr=1e-3
+        )
+
+    # --------------------------------------------------------
+    # Build the list of starting states
+    #
+    # First: the original 10 paper initializations.
+    # Then: optional GA elite mappings.
+    # --------------------------------------------------------
+
+    initializations = []
+
+    if seed_tuples is None:
+        # Initial PPO training:
+        # use the original 10 paper initializations.
+        for loop_order, sort_asc in loop_orderings:
+            init_tuples = build_init_tuples(
+                initial_input_list,
+                loop_order,
+                sort_asc
+            )
+            initializations.append(init_tuples)
+
+    else:
+        # Continued PPO training:
+        # start directly from the GA elite mappings.
+        for tuples in seed_tuples:
+            initializations.append([
+                (int(t[0]), int(t[1]))
+                for t in tuples
+            ])
+
+    # --------------------------------------------------------
+    # Run PPO from every initialization
+    # --------------------------------------------------------
 
     all_mappings = []
 
-    for run_id, (loop_order, sort_asc) in enumerate(loop_orderings):
-
-        init_tuples = build_init_tuples(initial_input_list, loop_order, sort_asc)
+    for run_id, init_tuples in enumerate(initializations):
 
         run_mappings = train_one_run(
-            initial_input_list, init_tuples,
-            wt_threshold, ot_threshold,
-            acnet, optimizer,
-            episodes=episodes, run_id=run_id
+            initial_input_list,
+            init_tuples,
+            wt_threshold,
+            ot_threshold,
+            acnet,
+            optimizer,
+            episodes=episodes,
+            run_id=run_id
         )
 
         all_mappings.extend(run_mappings)
@@ -562,6 +647,13 @@ def build_init_tuples(initial_input_list, loop_order, sort_asc=False):
 def train_one_run(initial_input_list, init_tuples, wt_threshold, ot_threshold,
                   acnet, optimizer,
                   episodes=30, run_id=0):
+
+    validate_ppo_tuples(
+        init_tuples,
+        dimension_from_input_list(initial_input_list),
+        getmapping_fn=getmapping,
+    )
+
     mapped = assign_increasing_values(init_tuples)
     norm   = Normalizer().normalize(mapped)
     init_t = torch.tensor(norm, dtype=torch.float32).unsqueeze(0)
@@ -578,18 +670,147 @@ def train_one_run(initial_input_list, init_tuples, wt_threshold, ot_threshold,
         for tuples, memmap, reward in zip(
                 pruned['tuples'], pruned['memmaps'], pruned['rewards']):
             w_sp,w_rf,o_sp,o_rf = compute_reuse(memmap)
-            all_mappings.append([
-                reward, format_mapping_dict(memmap), [], tuples, memmap,
-                ep, time.time(),
-                {'W':[w_sp,w_rf,1,w_sp*w_rf],'O':[o_sp,o_rf,1,o_sp*o_rf]},
-                1.0, 1
-            ])
+            all_mappings.append({
+                'rl_reward': float(reward),
+
+                'tuples': list(tuples),
+
+                'memmap': memmap,
+
+                'mapping': format_mapping_dict(memmap),
+
+                'episode': ep,
+
+                'timestamp': time.time(),
+
+                'reuse': {
+                    'W': [w_sp, w_rf, 1, w_sp * w_rf],
+                    'O': [o_sp, o_rf, 1, o_sp * o_rf],
+                },
+
+            })
 
         print(f"  Run {run_id+1} Ep {ep+1}/{episodes}"
               f" | pruned={len(pruned['tuples'])}"
               f" | total={len(all_mappings)}")
 
     return all_mappings
+
+
+
+# ── Timeloop feedback PPO ------------------------------------------------------
+# GA solutions are NOT treated as if PPO sampled them.  Instead, each GA elite
+# becomes an initial state for a fresh on-policy PPO rollout.  Every action in
+# that rollout is genuinely sampled by the current PPO policy and its resulting
+# mapping is evaluated with real Timeloop.  The Timeloop EDP is converted to the
+# PPO reward.
+
+TIMELOOP_REWARD_SCALE = 1.0e12
+
+
+def collect_timeloop_feedback_trajectory(
+    acnet,
+    init_tuples,
+    timeloop_evaluator,
+    max_steps=4,
+    dimension=None,
+):
+    """
+    Collect an on-policy PPO trajectory starting from a GA elite.
+
+    The stored action probabilities are the probabilities of the actions that
+    were actually sampled by the current policy.  Thus ppo_update() receives
+    valid PPO data instead of fabricated actions/probabilities.
+    """
+    traj = {
+        'states': [],
+        'actions': [],
+        'act_probs': [],
+        'rewards': [],
+    }
+
+    cur_tuples = list(init_tuples)
+    cur_state = tuples_to_state(cur_tuples)
+    if dimension is None:
+        # Backward-compatible default for callers that still use the original workload.
+        dimension = [1, 32, 16, 120, 120, 120, 3, 3, 3]
+
+    acnet.eval()
+    with torch.no_grad():
+        for _ in range(max_steps):
+            action, act_probs, _ = acnet.sample_action(cur_state)
+            nxt_tuples = swapTupleList(cur_tuples, action)
+
+            validate_ppo_tuples(
+                nxt_tuples,
+                dimension,
+                getmapping_fn=getmapping,
+            )
+
+            memmap = getmapping(nxt_tuples)
+            mapping_dict = format_mapping_dict(memmap)
+
+            result = timeloop_evaluator(nxt_tuples, mapping_dict)
+
+            edp = None if result is None else result.get('edp')
+
+            # Invalid mappings receive zero feedback and are not allowed to
+            # masquerade as a good Timeloop result.
+            if edp is None or not np.isfinite(edp) or edp <= 0:
+                reward = 0.0
+            else:
+                # Lower EDP => higher reward.  The constant is only a
+                # numerical scale; PPO normalizes advantages before updating.
+                reward = float(TIMELOOP_REWARD_SCALE / edp)
+
+            traj['states'].append(
+                cur_state.squeeze(0).detach().cpu().tolist()
+            )
+            traj['actions'].append(list(action))
+            traj['act_probs'].append(list(act_probs))
+            traj['rewards'].append(reward)
+
+            cur_tuples = nxt_tuples
+            cur_state = tuples_to_state(cur_tuples)
+
+    acnet.train()
+    return traj
+
+
+def ppo_timeloop_feedback(
+    acnet,
+    optimizer,
+    ga_elites,
+    timeloop_evaluator,
+    steps_per_elite=4,
+    dimension=None,
+):
+    """
+    Perform genuine PPO updates from Timeloop-evaluated rollouts seeded by
+    GAMMA/GA elites.
+
+    Important: GA mappings are starting states, not fake PPO actions.  The
+    action/log-probability pair used by PPO is always produced by the current
+    policy, and the reward comes from real Timeloop EDP of the resulting map.
+    """
+    total_steps = 0
+
+    for elite in ga_elites:
+        tuples = elite['tuples'] if isinstance(elite, dict) else elite
+
+        traj = collect_timeloop_feedback_trajectory(
+            acnet,
+            tuples,
+            timeloop_evaluator,
+            max_steps=steps_per_elite,
+            dimension=dimension,
+        )
+
+        if traj['states']:
+            ppo_update(traj, acnet, optimizer)
+            total_steps += len(traj['states'])
+
+    return total_steps
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
