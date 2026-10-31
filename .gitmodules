@@ -1,0 +1,7 @@
+[submodule "gamma-timeloop"]
+    path = gamma-timeloop
+    url = https://github.com/tbnrlucifer/gamma-timeloop.git
+
+[submodule "pytimeloop"]
+    path = pytimeloop
+    url = https://github.com/tbnrlucifer/timeloop-python.git
