@@ -1,0 +1,26 @@
+workload,seed,best_edp,runtime_s,population,generations,nominal_budget,timeloop_evals,successful,failed,valid_final,json,notes
+small,1,1493608398.1011205,522.8,20,5,120,120,120,0,20,gamma_lpf_only_small_seed1_20261113_134045.json,
+small,2,1488629756.8367817,604.1,20,5,120,120,120,0,20,gamma_lpf_only_small_seed2_20261113_134047.json,
+small,3,1489516468.5550406,546.0,20,5,120,120,120,0,20,gamma_lpf_only_small_seed3_20261113_134051.json,
+small,4,1469659916.5092025,532.4,20,5,120,120,118,2,20,gamma_lpf_only_small_seed4_20261113_134055.json,2 non-zero Timeloop return codes; 2 candidates got -inf fitness
+small,42,1485142489.3594394,564.9,20,5,120,120,120,0,20,gamma_lpf_only_small_seed42_20261113_134929.json,
+baseline,1,66205372202241.6,1079.3,20,5,120,120,120,0,20,gamma_lpf_only_baseline_seed1_20261113_134952.json,
+baseline,2,62614526356022.61,1035.8,20,5,120,120,119,1,20,gamma_lpf_only_baseline_seed2_20261113_135005.json,1 candidates got -inf fitness
+baseline,3,61841930316786.54,926.9,20,5,120,120,120,0,20,gamma_lpf_only_baseline_seed3_20261113_135103.json,
+baseline,4,66859866910247.53,1032.5,20,5,120,120,120,0,20,gamma_lpf_only_baseline_seed4_20261113_135856.json,
+baseline,42,69116856025678.43,798.1,20,5,120,120,119,1,20,gamma_lpf_only_baseline_seed42_20261113_140634.json,1 non-zero Timeloop return codes; 1 candidates got -inf fitness
+spatial-heavy,1,2691834145648176.5,1256.3,20,5,120,120,119,1,20,gamma_lpf_only_spatial-heavy_seed1_20261113_140729.json,1 non-zero Timeloop return codes; 1 candidates got -inf fitness
+spatial-heavy,2,2605870605418995.0,1376.6,20,5,120,120,119,1,20,gamma_lpf_only_spatial-heavy_seed2_20261113_140802.json,1 non-zero Timeloop return codes; 1 candidates got -inf fitness
+spatial-heavy,3,2623548056789978.5,1273.8,20,5,120,120,120,0,20,gamma_lpf_only_spatial-heavy_seed3_20261113_141611.json,
+spatial-heavy,4,2620013037954187.5,1344.3,20,5,120,120,119,1,20,gamma_lpf_only_spatial-heavy_seed4_20261113_141957.json,1 non-zero Timeloop return codes; 1 candidates got -inf fitness
+spatial-heavy,42,2700757630639803.5,1382.9,20,5,120,120,120,0,20,gamma_lpf_only_spatial-heavy_seed42_20261113_142833.json,
+channel-heavy,1,162398669767667.1,1137.9,20,5,120,120,120,0,20,gamma_lpf_only_channel-heavy_seed1_20261113_143110.json,
+channel-heavy,2,161491808547594.8,1281.3,20,5,120,120,120,0,20,gamma_lpf_only_channel-heavy_seed2_20261113_143727.json,
+channel-heavy,3,160936479774503.8,991.9,20,5,120,120,120,0,20,gamma_lpf_only_channel-heavy_seed3_20261113_144227.json,
+channel-heavy,4,162669462679197.7,1226.6,20,5,120,120,119,1,20,gamma_lpf_only_channel-heavy_seed4_20261113_145016.json,1 non-zero Timeloop return codes; 1 candidates got -inf fitness
+channel-heavy,42,161034857974821.97,1200.3,20,5,120,120,120,0,20,gamma_lpf_only_channel-heavy_seed42_20261113_145146.json,
+pointwise,1,2020872085154.4468,145.3,20,5,120,120,119,1,20,gamma_lpf_only_pointwise_seed1_20261113_145850.json,1 non-zero Timeloop return codes; 1 candidates got -inf fitness
+pointwise,2,2015743991927.728,137.4,20,5,120,120,119,1,20,gamma_lpf_only_pointwise_seed2_20261113_145903.json,1 non-zero Timeloop return codes; 1 candidates got -inf fitness
+pointwise,3,2023653720346.1565,162.1,20,5,120,120,118,2,20,gamma_lpf_only_pointwise_seed3_20261113_150123.json,2 non-zero Timeloop return codes; 2 candidates got -inf fitness
+pointwise,4,2015743991927.728,133.8,20,5,120,120,117,3,20,gamma_lpf_only_pointwise_seed4_20261113_150132.json,3 non-zero Timeloop return codes; 3 candidates got -inf fitness
+pointwise,42,2015743991927.728,133.3,20,5,120,120,119,1,20,gamma_lpf_only_pointwise_seed42_20261113_150348.json,1 non-zero Timeloop return codes; 1 candidates got -inf fitness
