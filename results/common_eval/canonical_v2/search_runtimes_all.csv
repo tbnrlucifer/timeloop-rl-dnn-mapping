@@ -1,0 +1,96 @@
+arm,budget,workload,seed,runtime_seconds,initial_rl_seconds,gamma_total_seconds,feedback_total_seconds,iter1_to_winner_seconds,machine,source_file
+hybrid_iter3,420,baseline,1,1935.6479939459996,280.19134109900006,1455.774030265,146.65110766900034,721.7296090440004,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_baseline_seed1_full_run_20261017_092214.json
+hybrid_iter3,420,baseline,2,2346.246342767,189.935404281,1851.6363525900001,266.9674736000002,900.971676403,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_baseline_seed2_full_run_20261112_190251.json
+hybrid_iter3,420,baseline,3,2710.369769051,179.74822592200007,2176.352850685,307.73127556500003,799.2121765250004,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_baseline_seed3_full_run_20261112_194952.json
+hybrid_iter3,420,baseline,42,2189.4412447470004,174.30609209700015,1706.3078448379983,274.44546285700017,805.756333420999,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_baseline_seed42_full_run_20261112_215037.json
+hybrid_iter3,420,baseline,4,2246.0226441369996,178.31024653700024,1787.0099439489995,242.7942831929986,808.8044880540001,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_baseline_seed4_full_run_20261112_204457.json
+hybrid_iter3,420,channel-heavy,1,4340.813869758,340.72906879199945,3526.3732175500045,379.6767097450029,1505.9188857750014,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_channel-heavy_seed1_full_run_20261017_135856.json
+hybrid_iter3,420,channel-heavy,2,2798.663691924,203.49776531599946,2192.6664256289996,368.4518517790002,704.3437444779993,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_channel-heavy_seed2_full_run_20261113_200726.json
+hybrid_iter3,420,channel-heavy,3,2847.8042963469998,161.6483332759999,2351.400369768,300.3339735599984,934.200956267001,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_channel-heavy_seed3_full_run_20261113_211543.json
+hybrid_iter3,420,channel-heavy,42,3776.9856986899977,203.90328797599796,2966.627464580997,549.9806873949929,1078.8754455659982,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_channel-heavy_seed42_full_run_20261113_231956.json
+hybrid_iter3,420,channel-heavy,4,3702.2727824950016,159.28574862799906,2931.2964109589993,578.9856518829984,1213.106659867999,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_channel-heavy_seed4_full_run_20261113_221030.json
+hybrid_iter3,420,pointwise,1,397.50935590699737,162.76450022099743,164.79243434800082,35.20755903099416,205.6486816769975,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_pointwise_seed1_full_run_20261114_024638.json
+hybrid_iter3,420,pointwise,2,365.34859847100233,161.36980852899796,145.0686370690055,26.23800258600386,211.4147209570001,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_pointwise_seed2_full_run_20261114_020520.json
+hybrid_iter3,420,pointwise,3,432.1958823740024,161.50661728200066,201.7833248389943,35.81882786299684,221.49991164399762,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_pointwise_seed3_full_run_20261114_021411.json
+hybrid_iter3,420,pointwise,42,361.58571994900194,163.99014285700105,141.7744153450003,21.61459268300314,208.11081713000385,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_pointwise_seed42_full_run_20261114_023634.json
+hybrid_iter3,420,pointwise,4,377.2447155310001,160.72389920500063,157.3342367649966,26.571897702004208,203.2791167610012,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_pointwise_seed4_full_run_20261114_022610.json
+hybrid_iter3,420,small,1,1220.1041882399998,280.3550641799998,795.1067520570009,63.506827770999735,570.202071227,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_small_seed1_full_run_20261017_085459.json
+hybrid_iter3,420,small,2,1723.7432843879997,272.1845411909999,1226.1228094920007,181.89455860599992,902.6373191549992,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_small_seed2_full_run_20261031_102313.json
+hybrid_iter3,420,small,3,1417.845541752,207.38006446500003,1005.2614353940007,159.1832123289987,461.93162060599934,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_small_seed3_full_run_20261031_105518.json
+hybrid_iter3,420,small,42,1457.8377932700005,217.5210535919996,1040.864903638003,157.14895025899932,556.7489014290004,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_small_seed42_full_run_20261031_133555.json
+hybrid_iter3,420,small,4,1270.9487738330008,248.6130201699998,815.2259377379996,95.43948015500064,539.4239444640007,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_small_seed4_full_run_20261031_130959.json
+hybrid_iter3,420,spatial-heavy,1,3136.7901028180004,319.03170117399895,2396.609810916003,342.92681796200304,1207.0312460269997,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_spatial-heavy_seed1_full_run_20261017_123628.json
+hybrid_iter3,420,spatial-heavy,2,2901.094024883001,205.94037568199929,2339.9666603709993,302.41156315800254,879.555617217,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_spatial-heavy_seed2_full_run_20261112_225419.json
+hybrid_iter3,420,spatial-heavy,3,2611.1487925770016,167.26415740100128,1937.725415685003,471.6215668609984,761.9787609520026,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_spatial-heavy_seed3_full_run_20261112_235242.json
+hybrid_iter3,420,spatial-heavy,42,2330.854881597,167.24785644500025,1802.9681669019992,325.0572173219998,781.5989208069996,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_spatial-heavy_seed42_full_run_20261113_190702.json
+hybrid_iter3,420,spatial-heavy,4,3080.328796055,181.17169675099998,2614.9723674490006,249.87811967399944,1253.240659622,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/hybrid/rl_ga_lpf_spatial-heavy_seed4_full_run_20261113_180143.json
+rl_only_120,120,baseline,1,1244.568623878,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_baseline_seed1_20261108_213416.json
+rl_only_120,120,baseline,2,1198.1126361799998,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_baseline_seed2_20261108_215502.json
+rl_only_120,120,baseline,3,1141.286848316,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_baseline_seed3_20261108_221501.json
+rl_only_120,120,baseline,42,1221.1554488870006,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_baseline_seed42_20261108_225446.json
+rl_only_120,120,baseline,4,1241.0085928379995,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_baseline_seed4_20261108_223403.json
+rl_only_120,120,channel-heavy,1,1220.1979307690017,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_channel-heavy_seed1_20261109_013313.json
+rl_only_120,120,channel-heavy,2,1303.0801674560025,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_channel-heavy_seed2_20261109_015334.json
+rl_only_120,120,channel-heavy,3,1247.4869255560006,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_channel-heavy_seed3_20261109_021519.json
+rl_only_120,120,channel-heavy,42,1262.0294923330002,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_channel-heavy_seed42_20261109_025638.json
+rl_only_120,120,channel-heavy,4,1229.6353436930003,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_channel-heavy_seed4_20261109_023607.json
+rl_only_120,120,pointwise,1,1639.554139269,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_pointwise_seed1_20261109_201725.json
+rl_only_120,120,pointwise,2,1734.138723517,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_pointwise_seed2_20261109_204443.json
+rl_only_120,120,pointwise,3,1607.5290581090003,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_pointwise_seed3_20261109_211316.json
+rl_only_120,120,pointwise,42,1176.373600934,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_pointwise_seed42_20261109_220757.json
+rl_only_120,120,pointwise,4,1727.7591113870003,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_pointwise_seed4_20261109_213937.json
+rl_only_120,120,small,1,1431.1719363390002,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_small_seed1_20261108_113926.json
+rl_only_120,120,small,2,993.6456514679999,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_small_seed2_20261108_202629.json
+rl_only_120,120,small,3,1021.482582308,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_small_seed3_20261108_204304.json
+rl_only_120,120,small,42,1010.4378728069996,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_small_seed42_20261108_211724.json
+rl_only_120,120,small,4,1036.199823127,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_small_seed4_20261108_210007.json
+rl_only_120,120,spatial-heavy,1,1243.0046893840008,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_spatial-heavy_seed1_20261109_031742.json
+rl_only_120,120,spatial-heavy,2,1218.1215480180035,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_spatial-heavy_seed2_20261109_033826.json
+rl_only_120,120,spatial-heavy,3,1124.9205931379984,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_spatial-heavy_seed3_20261109_035845.json
+rl_only_120,120,spatial-heavy,42,1273.651489232001,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_spatial-heavy_seed42_20261109_043923.json
+rl_only_120,120,spatial-heavy,4,1310.260760270001,,,,,RL junior machine (CPU-only PyTorch),results/experiments/rl_only/rl_only_spatial-heavy_seed4_20261109_041731.json
+gamma_only_120,120,baseline,1,1079.251490955,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_baseline_seed1_20261113_134952.json
+gamma_only_120,120,baseline,2,1035.7814047450001,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_baseline_seed2_20261113_135005.json
+gamma_only_120,120,baseline,3,926.9138343700001,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_baseline_seed3_20261113_135103.json
+gamma_only_120,120,baseline,42,798.0529998299994,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_baseline_seed42_20261113_140634.json
+gamma_only_120,120,baseline,4,1032.5333755700003,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_baseline_seed4_20261113_135856.json
+gamma_only_120,120,channel-heavy,1,1137.9496155979996,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_channel-heavy_seed1_20261113_143110.json
+gamma_only_120,120,channel-heavy,2,1281.2788417929996,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_channel-heavy_seed2_20261113_143727.json
+gamma_only_120,120,channel-heavy,3,991.9450639890001,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_channel-heavy_seed3_20261113_144227.json
+gamma_only_120,120,channel-heavy,42,1200.310819495,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_channel-heavy_seed42_20261113_145146.json
+gamma_only_120,120,channel-heavy,4,1226.5573543720002,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_channel-heavy_seed4_20261113_145016.json
+gamma_only_120,120,pointwise,1,145.32158788299967,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_pointwise_seed1_20261113_145850.json
+gamma_only_120,120,pointwise,2,137.39813148900066,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_pointwise_seed2_20261113_145903.json
+gamma_only_120,120,pointwise,3,162.0860163589996,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_pointwise_seed3_20261113_150123.json
+gamma_only_120,120,pointwise,42,133.34047661800014,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_pointwise_seed42_20261113_150348.json
+gamma_only_120,120,pointwise,4,133.82065115000023,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_pointwise_seed4_20261113_150132.json
+gamma_only_120,120,small,1,522.7616752389999,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_small_seed1_20261113_134045.json
+gamma_only_120,120,small,2,604.0823302580002,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_small_seed2_20261113_134047.json
+gamma_only_120,120,small,3,546.0322450449999,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_small_seed3_20261113_134051.json
+gamma_only_120,120,small,42,564.9214740940001,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_small_seed42_20261113_134929.json
+gamma_only_120,120,small,4,532.3590811920001,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_small_seed4_20261113_134055.json
+gamma_only_120,120,spatial-heavy,1,1256.3106991379996,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_spatial-heavy_seed1_20261113_140729.json
+gamma_only_120,120,spatial-heavy,2,1376.580895867,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_spatial-heavy_seed2_20261113_140802.json
+gamma_only_120,120,spatial-heavy,3,1273.7913882750004,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_spatial-heavy_seed3_20261113_141611.json
+gamma_only_120,120,spatial-heavy,42,1382.9474394749996,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_spatial-heavy_seed42_20261113_142833.json
+gamma_only_120,120,spatial-heavy,4,1344.343951035,,,,,"GAMMA junior WSL2 (18-core, 4 parallel)",results/experiments/gamma_only/gamma_lpf_only_spatial-heavy_seed4_20261113_141957.json
+rl_only_420,420,baseline,1,2077.10103765,,,,,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/iso_budget_420/rl_only/rl_only_baseline_seed1_20261120_185644.json
+rl_only_420,420,baseline,2,2543.1670549289993,,,,,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/iso_budget_420/rl_only/rl_only_baseline_seed2_20261120_210608.json
+rl_only_420,420,baseline,3,2075.7305489960017,,,,,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/iso_budget_420/rl_only/rl_only_baseline_seed3_20261120_221845.json
+rl_only_420,420,baseline,42,2218.730685748,,,,,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/iso_budget_420/rl_only/rl_only_baseline_seed42_20261121_020606.json
+rl_only_420,420,baseline,4,2079.7710412000015,,,,,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/iso_budget_420/rl_only/rl_only_baseline_seed4_20261121_005215.json
+rl_only_420,420,channel-heavy,1,2162.4817897110006,,,,,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/iso_budget_420/rl_only/rl_only_channel-heavy_seed1_20261121_032537.json
+rl_only_420,420,channel-heavy,2,2361.0216620779975,,,,,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/iso_budget_420/rl_only/rl_only_channel-heavy_seed2_20261121_045533.json
+rl_only_420,420,channel-heavy,3,2330.432613169003,,,,,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/iso_budget_420/rl_only/rl_only_channel-heavy_seed3_20261121_061523.json
+rl_only_420,420,channel-heavy,42,2156.1829754520004,,,,,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/iso_budget_420/rl_only/rl_only_channel-heavy_seed42_20261121_090211.json
+rl_only_420,420,channel-heavy,4,2481.372287088001,,,,,"Canonical laptop (RTX 4060 GPU + CPU, sequential)",results/experiments/iso_budget_420/rl_only/rl_only_channel-heavy_seed4_20261121_073720.json
+gamma_only_420,420,baseline,1,1909.9105946920008,,,,,"Canonical laptop (CPU, sequential)",results/experiments/iso_budget_420/gamma_only/gamma_lpf_only_baseline_seed1_20261120_201429.json
+gamma_only_420,420,baseline,2,1806.504548003999,,,,,"Canonical laptop (CPU, sequential)",results/experiments/iso_budget_420/gamma_only/gamma_lpf_only_baseline_seed2_20261120_214836.json
+gamma_only_420,420,baseline,3,2000.4919600600006,,,,,"Canonical laptop (CPU, sequential)",results/experiments/iso_budget_420/gamma_only/gamma_lpf_only_baseline_seed3_20261121_001702.json
+gamma_only_420,420,baseline,42,1829.9339433759997,,,,,"Canonical laptop (CPU, sequential)",results/experiments/iso_budget_420/gamma_only/gamma_lpf_only_baseline_seed42_20261121_024447.json
+gamma_only_420,420,baseline,4,1981.7048127600028,,,,,"Canonical laptop (CPU, sequential)",results/experiments/iso_budget_420/gamma_only/gamma_lpf_only_baseline_seed4_20261121_013136.json
+gamma_only_420,420,channel-heavy,1,2804.582686873997,,,,,"Canonical laptop (CPU, sequential)",results/experiments/iso_budget_420/gamma_only/gamma_lpf_only_channel-heavy_seed1_20261121_040612.json
+gamma_only_420,420,channel-heavy,2,2422.6415543570038,,,,,"Canonical laptop (CPU, sequential)",results/experiments/iso_budget_420/gamma_only/gamma_lpf_only_channel-heavy_seed2_20261121_053457.json
+gamma_only_420,420,channel-heavy,3,2580.8278795959995,,,,,"Canonical laptop (CPU, sequential)",results/experiments/iso_budget_420/gamma_only/gamma_lpf_only_channel-heavy_seed3_20261121_065417.json
+gamma_only_420,420,channel-heavy,42,2343.931927490994,,,,,"Canonical laptop (CPU, sequential)",results/experiments/iso_budget_420/gamma_only/gamma_lpf_only_channel-heavy_seed42_20261121_093812.json
+gamma_only_420,420,channel-heavy,4,2602.9818064889987,,,,,"Canonical laptop (CPU, sequential)",results/experiments/iso_budget_420/gamma_only/gamma_lpf_only_channel-heavy_seed4_20261121_081845.json
